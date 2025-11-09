@@ -1,0 +1,24 @@
+/*MAIN*/
+     .learn-page{
+         text-align: center;
+         padding: 50px 20px;
+         background-color: rgb(238, 255, 6);
+         color: rgb(94, 6, 6);
+        }
+
+/*VIDEOS*/
+    .vdContainer{
+        background-color: var(--vd-bg-clr);
+    }
+    
+    .vdContainer .elm{
+        background-color: var(--vd-elm-bg-clr);
+        color: var(--vd-elm-clr);
+    }
+
+/*BOOKS*/
+    .booksContainer{
+         font: var(--books-font);
+         background-color: var(--vd-elm-bg-clr);
+         color: var(--vd-elm-clr);
+        }    

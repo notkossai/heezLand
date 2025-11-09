@@ -1,0 +1,48 @@
+.footer{
+    background-color: green;
+}
+
+.footer .logo{
+    font-size: 2rem;
+    color: white;
+}
+
+.footer-inner{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav.quick-links{
+ /*   border: 2px solid;  /*DELETE*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+}
+
+.footer .quick-links .title{
+    text-align: center;
+    color: white;
+}
+
+.footer .quick-links ul{
+    border: 2px solid;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer .quick-links li{
+    border: 2px solid cyan;
+}
+
+.footer a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer .subtitle{
+ /*   border: 2px solid;  /*DELETE*/
+    text-align: center;
+}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <style>
+    .icon {
+      stroke: #222;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+  </style>
+  <!-- speaker -->
+  <path class="icon" d="M22 14 L16 19 H10 v10 h6 l6 5 V14 Z"/>
+  <!-- sound waves -->
+  <path class="icon" d="M30 18 q6 6 0 12"/>
+  <path class="icon" d="M34 14 q10 10 0 20"/>
+</svg>

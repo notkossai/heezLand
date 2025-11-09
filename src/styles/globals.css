@@ -1,0 +1,99 @@
+/*
+ You don't need to search for the color or size code in the file
+ change the parameters here.
+ maybe i will also add all the animations and responsive design here
+
+ bg => background 
+ elm => elements
+ clr => color
+ pg => page
+ sec => section
+ brd => border
+ hvr => hover
+ actv => active
+ btn => button
+ txt => text
+*/
+
+:root{
+   /*COMPONENTS*/
+     /*NAV-BAR*/
+         /*main*/
+             --nav-font: none;
+             --nav-bg-clr: #e8e0cc;
+             --nav-clr: none;
+         /*logo*/
+             --nav-logo-clr: #1e3a34;
+         /*elements*/
+             --nav-elm-bg-clr: #f5f0e1;
+             --nav-elm-brd-clr: #cfc6ab;
+             --nav-elm-clr: #184a1a;
+             /*states*/
+                 /*hover*/
+                     --nav-elm-bg-clr-hvr: linear-gradient(90deg, #4caf50 0%, #2196f3 50%, #81d4fa 100%);
+                     --nav-elm-brd-clr-hvr: #6fd08c;
+                 /*active*/
+                     --nav-elm-bg-clr-actv: #e1f5fe;
+                     --nav-elm-brd-clr-actv: #2e7d32;
+ 
+     /*FOOTER*/
+         /*main*/
+             --footer-font: none;
+             --footer-bg-clr: #2e7d32;
+             --footer-clr: #ffffff;
+         /*logo*/
+             --footer-logo-clr: #ffffff;
+         /*elements (links)*/
+             --footer-elm-clr: #e9ffe9;
+             --footer-elm-clr-hvr: hsl(120, 68%, 80%);
+         /*bottom (botm => bottom)*/
+             --footer-botm-bg-clr: #0f6a2a;            
+   
+   /*HOME PAGE*/ 
+     /*main*/
+         --homePg-bg-clr: none;
+         --homePg-btn-clr: #FFEE58;
+         --homePg-txt-clr: #1E3A34;
+
+     /*HERO-SECTION*/
+         --heroSec-bg-clr: linear-gradient(to bottom, #4CAF50, #2E7D32);
+         --heroSec-elm-clr: #8BC34A;
+
+     /*KIDS-SECTION*/
+         --kidsSec-bg-clr: linear-gradient(to bottom, #2196F3, #1976D2);
+         --kidsSec-elm-clr: #64B5F6;
+
+     /*PARENTS-SECTION*/
+         --parentsSec-bg-clr: linear-gradient(to bottom, #81D4FA, #B3E5FC);
+         --parentsSec-elm-clr: #C8E6C9;
+
+   /*LEARN PAGE*/
+     /*main*/
+         --learnPg-bg-clr: gray;
+         --learnPg-elm-clr: black;
+
+   /*GAMES PAGE*/
+     /*main*/
+         --gamesPg-bg-clr: gray;
+         --gamesPg-elm-clr: black;
+
+      /*hero*/
+          --gamesPg-hero-clr:pink;   
+
+   /*QUIZ PAGE*/
+     /*main*/
+         --quizPg-bg-clr: gray;
+         --quizPg-elm-clr: black;
+
+   /*ABOUT PAGE*/
+     /*main*/
+         --aboutPg-bg-clr: gray;
+         --aboutPg-elm-clr: black;
+
+   /*SOCIALS PAGE*/
+     /*main*/
+         --socialsPg-bg-clr: gray;
+         --socialsPg-elm-clr: black;
+
+
+}

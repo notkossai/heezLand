@@ -1,0 +1,159 @@
+
+/*ANIMATIONS*/
+     /*swing*/
+         @keyframes swing {
+             0%{transform: rotate(-3.8deg);}
+             50%{transform: rotate(1.8deg);}
+             100%{transform: rotate(-3.8deg);}
+            }
+
+         @media (prefers-reduced-motion: reduce){
+             .sign-wrap{animation: none;}
+            }
+     /*other*/    
+
+/*MAIN*/  
+     .home-page{
+         text-align: center;
+         background: var(--heroSec-bg-clr);
+         border-radius: 30px;
+        }
+
+/*HERO SECTION*/
+     /*main*/
+         .hero-section{
+             position: relative;
+             background: var(--heroSec-bg-clr);
+             color: var(--heroSec-elm-clr);
+             min-height: 85dvh;
+             display: flex;
+             justify-content: center;
+             align-items: flex-start;
+             overflow: hidden;
+            }
+
+     /*hero-logo*/
+         .logo-wrap{
+             /*border: 2px solid black;  /*DELETE*/
+             height: 550px;
+             width: 550px;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             justify-self: center;
+             margin-top: 3rem;
+            }
+     
+     /*grass*/
+         .grass-wrap{
+             /*border: 2px solid;  /*DELETE*/
+             position: absolute;
+             bottom: 0;
+             width: fit-content;
+             width: 100%;
+             max-height: 30%;
+             pointer-events: none;
+             z-index: 0;
+            }
+
+/*KIDS SECTION*/
+     /*main*/
+         .kids-section{
+             position: relative;
+             background: var(--kidsSec-bg-clr);
+             color: var(--kidsSec-elm-clr);
+             min-height: 80dvh;
+             display: flex;
+             flex-direction: column;
+            }
+
+     /*hero*/  
+         .kids-section .hero{
+             /*border: 2px solid  white;  /*DELETE*/
+             display: flex;
+             flex-direction: column;
+             align-items: center;
+            }
+        
+         .kids-section .hero .title{
+             border: 2px solid red;  /*DELETE*/
+            }
+
+         .kids-section .hero p{
+             border: 2px solid black;  /*DELETE*/
+             color: var(--kidsSec-hero-p-clr);
+             display: block;
+            }      
+
+     /*cards*/
+         .kids-cards{
+             border: 2px solid black;
+             display: grid;
+             grid-template-columns: repeat(3,1fr);
+             height: fit-content;
+             padding: 2rem;
+             gap: 25px;
+             max-width: 900px;
+             margin: 0 2rem;
+            }
+
+         .kids-cards .card{
+             border: 2px solid;  /*DELETE*/
+             display: flex;
+             flex-direction: column;
+             place-items: center;
+             padding: 1rem;
+             border-radius: 23px;
+            }
+         
+         .kids-cards .card .icon{
+             border: 2px solid black;  /*DELETE*/
+             width: 70px;
+             height: 70px;
+             display: grid;
+             place-items: center;
+             border-radius: 15px;
+            } 
+            
+         .kids-cards .card .subtitle{
+             border: 2px solid green;  /*DELETE*/
+            }   
+         
+         .kids-cards .card .button{
+             border: 2px solid yellow;  /*DELETE*/
+            }   
+
+/*PARENTS SECTION*/
+     /*main*/
+         .parents-section{
+             background: var(--parentsSec-bg-clr);
+             color: var(--parentsSec-elm-clr);
+             min-height: 55dvh;
+            }
+
+     /*hero*/
+         .parents-section .hero{
+             border: 2px solid black;  /*DELETE*/
+             display: flex;
+             flex-direction: column;
+            } 
+
+         .parents-section .hero .title{
+             border: 2px solid green;  /*DELETE*/
+            }
+            
+         .parents-section .hero .subtitle{
+             border: 2px solid red;  /*DELETE*/
+            }   
+         
+     /*learn-more*/
+         .parents-section .learn-more{
+             border: 2px solid black;  /*DELETE*/
+            }   
+
+         .parents-section .learn-more button{
+             border: 2px solid black;  /*DELETE*/
+             width: 200px;
+             height: 70px;
+             border-radius: 25px;
+            }    

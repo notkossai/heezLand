@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 240">
+  <!-- Shadow -->
+  <rect x="30" y="65" width="360" height="120" rx="18" ry="18" fill="rgba(0,0,0,0.15)"/>
+
+  <!-- Wooden Sticks -->
+  <rect x="110" y="0" width="15" height="60" rx="6" fill="#BCA87D" stroke="#8C6C4B" stroke-width="3"/>
+  <rect x="290" y="0" width="15" height="60" rx="6" fill="#BCA87D" stroke="#8C6C4B" stroke-width="3"/>
+
+  <!-- Wooden Board -->
+  <rect x="30" y="60" width="360" height="120" rx="18" ry="18" fill="#D8B08C" stroke="#7C5E3C" stroke-width="6"/>
+
+  <!-- Screws -->
+  <circle cx="80" cy="80" r="6" fill="#7C5E3C"/>
+  <circle cx="340" cy="80" r="6" fill="#7C5E3C"/>
+
+  <!-- Text -->
+  <text x="210" y="140" text-anchor="middle"
+        font-family="Nunito, Arial, sans-serif"
+        font-weight="900"
+        font-size="46"
+        fill="#0a0c0bff">
+    HeezLand
+  </text>
+</svg>

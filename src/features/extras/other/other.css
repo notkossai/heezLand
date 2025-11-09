@@ -1,0 +1,7 @@
+.other-page .hero{
+    color: var(--otherPage-hero-clr);
+}
+
+.other-page .comments{
+    background-color: var(--otherPage-comments-bg-clr);
+}
