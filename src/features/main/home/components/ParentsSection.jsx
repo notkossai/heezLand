@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 import "../home.css"
 
@@ -12,7 +13,8 @@ export default function ParentsSection() {
             </div>
 
             <div className="learn-more">
-                 <button>Learn more</button>
+                <Link to={"/about"}><button>Discover our project</button></Link>
+                 
             </div>
         </section>
     );

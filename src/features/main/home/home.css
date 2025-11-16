@@ -1,3 +1,10 @@
+/*TO DO*/
+ /*600px => logo -> msct-heez-green*/
+ /*need to fix grass problem*/
+ /*fonts*/
+ /*colors*/
+ /*add clouds to parents section*/
+ /*add fish to kids section*/
 
 /*ANIMATIONS*/
      /*swing*/
@@ -22,38 +29,54 @@
 /*HERO SECTION*/
      /*main*/
          .hero-section{
+             /*border: 2px solid brown;  /*DELETE*/
              position: relative;
              background: var(--heroSec-bg-clr);
              color: var(--heroSec-elm-clr);
-             min-height: 85dvh;
+             height: fit-content;
+             max-height: 85dvh;
              display: flex;
-             justify-content: center;
-             align-items: flex-start;
+             flex-direction: column;
+             align-items: center;
+             row-gap: 25px;
              overflow: hidden;
             }
 
      /*hero-logo*/
-         .logo-wrap{
+         .hero-section .logo-wrap{
              /*border: 2px solid black;  /*DELETE*/
-             height: 550px;
-             width: 550px;
+             height: 520px;
+             width: 520px;
              display: flex;
              justify-content: center;
              align-items: center;
              justify-self: center;
-             margin-top: 3rem;
+             margin-top: 1rem;
+             overflow: hidden;
             }
+
+     /*quick-links*/
+         .hero-section .quick-link{
+             /*border: 2px solid red;  /*DELETE*/
+             display: flex;
+             gap: 10px;
+            }      
+
+         .hero-section .quick-link button{
+             border-radius: 10px;
+             padding: 8px 10px;
+
+            }   
      
      /*grass*/
          .grass-wrap{
              /*border: 2px solid;  /*DELETE*/
-             position: absolute;
-             bottom: 0;
              width: fit-content;
              width: 100%;
-             max-height: 30%;
+             height: 25%;
+             max-height: 200px;
              pointer-events: none;
-             z-index: 0;
+             margin-bottom: 0;
             }
 
 /*KIDS SECTION*/
@@ -65,6 +88,7 @@
              min-height: 80dvh;
              display: flex;
              flex-direction: column;
+             align-items: center;
             }
 
      /*hero*/  
@@ -77,6 +101,7 @@
         
          .kids-section .hero .title{
              border: 2px solid red;  /*DELETE*/
+             margin: 2rem .5rem 0;
             }
 
          .kids-section .hero p{
@@ -87,21 +112,20 @@
 
      /*cards*/
          .kids-cards{
-             border: 2px solid black;
+             border: 2px solid black;  /*DELETE*/
              display: grid;
              grid-template-columns: repeat(3,1fr);
-             height: fit-content;
-             padding: 2rem;
+             width: 90%;
+             height: 300px;
+             padding: 2rem 1rem;
              gap: 25px;
-             max-width: 900px;
-             margin: 0 2rem;
             }
 
          .kids-cards .card{
              border: 2px solid;  /*DELETE*/
              display: flex;
              flex-direction: column;
-             place-items: center;
+             align-items: center;
              padding: 1rem;
              border-radius: 23px;
             }
@@ -111,16 +135,19 @@
              width: 70px;
              height: 70px;
              display: grid;
-             place-items: center;
+             justify-content: center;
+             align-items: center;
              border-radius: 15px;
             } 
             
          .kids-cards .card .subtitle{
              border: 2px solid green;  /*DELETE*/
+             width: 80%;
             }   
          
          .kids-cards .card .button{
              border: 2px solid yellow;  /*DELETE*/
+             width: 50%;
             }   
 
 /*PARENTS SECTION*/
@@ -128,32 +155,41 @@
          .parents-section{
              background: var(--parentsSec-bg-clr);
              color: var(--parentsSec-elm-clr);
-             min-height: 55dvh;
+             min-height: 35dvh;
             }
 
      /*hero*/
          .parents-section .hero{
-             border: 2px solid black;  /*DELETE*/
+             /*border: 2px solid brown;  /*DELETE*/
              display: flex;
              flex-direction: column;
+             gap: 0px;
             } 
 
          .parents-section .hero .title{
-             border: 2px solid green;  /*DELETE*/
+             /*border: 2px solid green;  /*DELETE*/
+             margin: 2rem .5rem 0;
             }
             
          .parents-section .hero .subtitle{
-             border: 2px solid red;  /*DELETE*/
+             /*border: 2px solid red;  /*DELETE*/
+             margin: 1rem .5rem 2rem;
             }   
          
      /*learn-more*/
          .parents-section .learn-more{
-             border: 2px solid black;  /*DELETE*/
+             /*border: 2px solid black;  /*DELETE*/
+             font-size: 1rem;
             }   
 
          .parents-section .learn-more button{
              border: 2px solid black;  /*DELETE*/
-             width: 200px;
+             width: 22%;
+             min-width: 126px;
              height: 70px;
              border-radius: 25px;
+             font-size: 1rem;
+             cursor: pointer;
             }    
+
+       
