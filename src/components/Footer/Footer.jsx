@@ -1,6 +1,8 @@
 
 import "./Footer.css";
 
+import LogoSvg from "@/assets/svg/brand/heez-green.svg?react"
+
 import { Link } from "react-router-dom";
 
 
@@ -10,8 +12,8 @@ export default function Footer() {
     return (
         <footer className="footer">
             <div className="footer-inner">
-                <div className="logo">
-                    <Link to={"/"}>HeezLand</Link>
+                <div className="logo-wrap">
+                    <Link to={"/"}><LogoSvg className="logo" /></Link>
                 </div>
                 <nav className="quick-links">
                     <div className="for-kids">

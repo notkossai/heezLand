@@ -14,18 +14,28 @@
 color: var(--footer-elm-clr-hvr); }
 
 .footer-inner {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 32px 20px;
+  padding: 32px 22px;
   display: grid;
   grid-template-columns: 1.2fr 2fr;
   gap: 32px;
 }
 
-.footer-inner .logo {
-  font-size: 28px;
-  font-weight: 800;
-  letter-spacing: 0.5px;
+.footer .logo-wrap{
+  /*border: 2px solid;  /*DELETE*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  padding-left: 10px;
+}
+
+.footer .logo{
+  object-fit: fit-content;
 }
 
 .footer .quick-links {

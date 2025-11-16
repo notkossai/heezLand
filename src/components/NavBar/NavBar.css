@@ -1,3 +1,14 @@
+/*COMMENTS*/
+/*change the color of the nav elm hover*/
+/*sound toggle render in the menu for 350px> screens*/
+
+/*ANIMATIONS*/
+  @keyframes coin-spin {
+    0%{transform: rotateX(0deg);}
+    100%{transform: rotateX(720deg);}
+  }
+
+
 /*container*/
    .navbar {
      position: sticky;
@@ -19,18 +30,32 @@
     }
 
 /*logo*/
-   .logo {
-     font-weight: 800;
-     font-size: 20px;
-     color: var(--nav-logo-clr);
-     text-decoration: none;
-     margin-right: 6px;
+   .nav-inner .logo-wrap {
+     /*border: 2px solid rgb(216, 11, 11);  /*DELETE*/
+     width: 80px;
+     height: 48px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     overflow: hidden;
     }
+
+   .logo{
+     /*border: 2px solid rgb(204, 169, 169);  /*DELETE*/
+     width: 95%;
+     height: 90%;
+     object-fit: contain;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     fill: var(--nav-elm-bg-clr);
+   } 
 
 /*desktop links*/
    .nav-links {
      display: flex;
      align-items: center;
+     /*justify-content: center;  /*TRY*/
      gap: 12px;
      list-style: none;
      margin: 0;
@@ -73,16 +98,17 @@
      border: 2px solid var(--nav-elm-brd-clr);
      background: var(--nav-elm-bg-clr);
      display: grid;
-     place-items: center;
+     justify-items: center;
+     align-items: center;
     }
 
    .soundBtn:hover { 
-     background: white;
+     background: #fff;
     }
 
-   .soundOn-icon { 
-     width: 22px;
-     height: 22px; 
+   .sound-icon { 
+     width: 30px;
+     height: 30px; 
      stroke: #1f2937; 
     }
 
@@ -91,21 +117,45 @@
      display: inline-flex;
      align-items: center;
      gap: 6px;
-     padding: 8px 12px;
+     padding: 4px 12px 4px 10px;
      border-radius: 999px;
      background: var(--nav-elm-bg-clr);
      border: 2px solid var(--nav-elm-brd-clr);
      font-weight: 700;
-     color: #1b5e20;
     }
 
-   .coins-container .coins {
-     font-size: 16px;
-     line-height: 1; 
-    }
+   .coins-container.coins-desktop-only {
+     display: inline-flex;
+   }
+
+   .coins-container.coins-mobile-only {
+     display: none;
+     width: 80px;
+     justify-self: center;
+     justify-content: center;
+   }
+
+   .coins-icon{
+     /*border: 2px solid rgb(204, 169, 169);  /*DELETE*/
+     border-radius: 50%;
+     width: 35px;
+     height: 35px;
+     object-fit: contain;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+     transition: transform .2s;
+   } 
+
+   .coins-icon.spin{
+    animation: coin-spin 1.1s ease-out forwards;
+   }
+
 
    .coins-container .amount {
      font-variant-numeric: tabular-nums; 
+     color: #1b5e20;
     }
 
 /*hamburger for mobile*/
@@ -118,7 +168,10 @@
      cursor: pointer;
      align-items: center;
      justify-content: center;
+     flex-direction: column;
+     padding: 0;
     }
+
    .menu-toggle span {
      display: block;
      width: 18px; 
@@ -128,10 +181,13 @@
      transition: .2s;
     }
    .menu-toggle.open span:nth-child(1){ 
-     transform: translateY(5px) rotate(45deg); 
+     transform: translateY(5px) rotate(50deg); 
     }
-   .menu-toggle.open span:nth-child(2){ 
-     transform: translateY(-5px) rotate(-45deg); 
+   .menu-toggle.open span:nth-child(3){ 
+     transform: translateY(-5px) rotate(-50deg); 
+    }
+    .menu-toggle.open span:nth-child(2){ 
+     display: none; 
     }
 
 /*mobile dropdown*/
@@ -144,6 +200,7 @@
      border-radius: 18px;
      padding: 10px;
      box-shadow: 0 8px 20px rgba(0,0,0,.12);
+     gap: 8px;
     }
 
    .nav-panel.show { 
@@ -162,7 +219,12 @@
     }
 
 /*responsive rules*/
-   @media (max-width: 920px) {
+   @media (max-width: 850px) {
+
+     .nav-inner{
+      justify-content: space-between;
+     }
+
      .nav-links {
        display: none;   /* hide desktop links */
       }    
@@ -170,16 +232,23 @@
      .menu-toggle {
        display: inline-flex; 
       }
+
      .right-side {
-       gap: 8px; 
+       gap: 15px; 
       }
+
+        .coins-container.coins-desktop-only {
+       display: none;
+      }
+
+      .coins-container.coins-mobile-only {
+       display: inline-flex;
+       margin-bottom: 4px;
+      }
+      
     }
 
-   @media (max-width: 520px) {
-     .coins-container {
-       display: none; /* hide coins on very small screens */
-      } 
-     .logo {
-       font-size: 18px; 
-      }
-}
+    @media (max-width: 350px){
+
+    }
+   
