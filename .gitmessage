@@ -1,0 +1,25 @@
+TYPE(scope): short subject
+
+Longer description - explain what and why, not how.
+
+#Codification
+     #Version States
+         #IV: Initial Version
+         #OWF: On Work Version
+         #PVF: Probably Final Version
+         #FV: Final Version
+     #Work Type
+         #TODO
+         #DONE
+         #BUG
+         #DEBUG
+         #FIX
+         #TEST
+         #PERF
+         #STYLE
+         #PRETTY: Clean Code
+         #REVERT: Revert To Previous Commit
+         #FEAT: New Feature
+         #REFACTOR: Code Chnage(not debug, not feature)
+         #WIP: Work In Progress    
+Refs: #ISSUE
