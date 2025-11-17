@@ -1,5 +1,13 @@
+// TO DO
+// text 
 
 import "../home.css"
+import { Link } from "react-router-dom";
+
+import LearnSvg from "@/assets/icons/book.svg?react"
+import GameSvg from "@/assets/icons/console.svg?react"
+import QuizSvg from "@/assets/icons/brain.svg?react"
+
 
 export default function KidsSection() {
     return (
@@ -11,19 +19,20 @@ export default function KidsSection() {
             </div>
             <div className="kids-cards">
                 <div className=" card learn">
-                    <div className="icon">photo</div>
-                    <h3 className="subtitle">text</h3>
-                    <button className="button">Try it out</button>
+                    <div className="icon"><LearnSvg /></div>
+                    <h3 className="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h3>
+                    <Link to={"/learn"}><button className="button">Try it out</button></Link>
+                    
                 </div>
                 <div className="card game">
-                    <div className="icon">photo</div>
-                    <h3 className="subtitle">text</h3>
-                    <button className="button">Try it out</button>
+                    <div className="icon"><GameSvg /></div>
+                    <h3 className="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h3>
+                    <Link to={"/games"}><button className="button">Try it out</button></Link>
                 </div>
                 <div className="card quiz">
-                    <div className="icon">photo</div>
-                    <h3 className="subtitle">text</h3>
-                    <button className="button">Try it out</button>
+                    <div className="icon"><QuizSvg /></div>
+                    <h3 className="subtitle">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</h3>
+                    <Link to={"/quiz"}><button className="button">Try it out</button></Link>
                 </div>
             </div>
         </section>

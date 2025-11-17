@@ -1,8 +1,8 @@
 /*TO DO*/
  /*600px => logo -> msct-heez-green*/
- /*need to fix grass problem*/
  /*fonts*/
  /*colors*/
+ /*fix grass problem*/
  /*add clouds to parents section*/
  /*add fish to kids section*/
 
@@ -97,6 +97,7 @@
              display: flex;
              flex-direction: column;
              align-items: center;
+             margin-bottom: 1rem;
             }
         
          .kids-section .hero .title{
@@ -111,17 +112,18 @@
             }      
 
      /*cards*/
-         .kids-cards{
-             border: 2px solid black;  /*DELETE*/
+         .kids-section .kids-cards{
+             /*border: 2px solid black;  /*DELETE*/
              display: grid;
              grid-template-columns: repeat(3,1fr);
              width: 90%;
-             height: 300px;
+             max-width: 500px;
              padding: 2rem 1rem;
              gap: 25px;
+             margin-bottom: 1rem;
             }
 
-         .kids-cards .card{
+         .kids-section .kids-cards .card{
              border: 2px solid;  /*DELETE*/
              display: flex;
              flex-direction: column;
@@ -130,24 +132,39 @@
              border-radius: 23px;
             }
          
-         .kids-cards .card .icon{
+         .kids-section .kids-cards .card .icon{
              border: 2px solid black;  /*DELETE*/
              width: 70px;
              height: 70px;
-             display: grid;
+             display: flex;
              justify-content: center;
              align-items: center;
              border-radius: 15px;
             } 
+
+         .kids-section .kids-cards .card .icon svg{
+            width: 60px;
+            height: 60px;
+         }   
             
-         .kids-cards .card .subtitle{
-             border: 2px solid green;  /*DELETE*/
+         .kids-section .kids-cards .card .subtitle{
+             /*border: 2px solid green;  /*DELETE*/
              width: 80%;
             }   
+
+         .kids-section .kids-cards .card a{
+             min-width: 100px;
+             max-width: 200px;
+         }   
          
-         .kids-cards .card .button{
-             border: 2px solid yellow;  /*DELETE*/
-             width: 50%;
+         .kids-section .kids-cards .card .button{
+             /*border: 2px solid yellow;  /*DELETE*/
+             width: 170px;
+             min-width: 100px;
+             max-width: 200px;
+             height: 45px;
+             border-radius: 15px;
+             cursor: pointer;
             }   
 
 /*PARENTS SECTION*/
@@ -192,4 +209,8 @@
              cursor: pointer;
             }    
 
-       
+@media (max-width: 3000px) {
+     .kids-section .kids-cards{
+             grid-template-columns: 1fr;
+     }
+}       
