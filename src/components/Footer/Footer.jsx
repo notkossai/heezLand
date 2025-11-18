@@ -1,7 +1,7 @@
 
 import "./Footer.css";
 
-import LogoSvg from "@/assets/svg/brand/heez-green.svg?react"
+import LogoSvg from "@/assets/svg/brand/bubble_heez.svg?react"
 
 import { Link } from "react-router-dom";
 

@@ -3,7 +3,7 @@
    import { Link, NavLink } from "react-router-dom";
 
 /*svg*/
-   import LogoSvg from "@/assets/svg/brand/heez-white-black.svg?react";
+   import LogoSvg from "@/assets/svg/brand/bubble_heez0.svg?react";
    import SoundOnSvg from "@/assets/svg/soundOn.svg?react"; 
    import SoundOffSvg from "@/assets/svg/soundOff.svg?react"; 
    import CoinSvg from "@/assets/svg/brand/coin.svg?react";

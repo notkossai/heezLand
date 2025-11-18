@@ -41,7 +41,7 @@
      overflow: hidden;
     }
 
-   .logo{
+    .nav-inner .logo{
      /*border: 2px solid rgb(204, 169, 169);  /*DELETE*/
      width: 95%;
      height: 90%;
