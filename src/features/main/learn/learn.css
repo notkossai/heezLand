@@ -4,6 +4,7 @@
          padding: 50px 20px;
          background-color: rgb(238, 255, 6);
          color: rgb(94, 6, 6);
+         min-height: 100vh;
         }
 
 /*VIDEOS*/
