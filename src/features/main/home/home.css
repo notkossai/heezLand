@@ -31,7 +31,7 @@
 
 /*HERO SECTION*/
      /*main*/
-         .hero-section{
+         .home-page .hero-section{
              /*border: 2px solid brown;  /*DELETE*/
              position: relative;
              background: var(--heroSec-bg-clr);
@@ -45,7 +45,7 @@
             }
 
      /*tgaline*/
-         .hero-section .tagline{
+         .home-page .hero-section .tagline{
             display: none;
             border: 2px solid black;
             width: 80%;
@@ -53,12 +53,12 @@
             margin-bottom: 1rem;
          }       
 
-         .hero-section .tagline p{
+         .home-page .hero-section .tagline p{
             font-size: 1.5rem;
          }
 
      /*hero-logo*/
-         .hero-section .logo-wrap{
+         .home-page .hero-section .logo-wrap{
              /*border: 2px solid black;  /*DELETE*/
              position: relative;
              height: 520px;
@@ -72,18 +72,18 @@
              margin-bottom: 1rem;
             }
          
-         .hero-section .logo-wrap svg{
+         .home-page .hero-section .logo-wrap svg{
             /*border: 2px solid black;  /*DELETE*/
             overflow: hidden;
          }   
 
-         .hero-section .logo.md{
+         .home-page .hero-section .logo.md{
             display: none;
             /*border: 2px solid black;  /*DELETE*/
          }   
 
      /*quick-links*/
-         .hero-section .quick-link{
+         .home-page .hero-section .quick-link{
              /*border: 2px solid red;  /*DELETE*/
              display: flex;
              justify-content: center;
@@ -95,7 +95,7 @@
              height: 50px;
             }      
 
-         .hero-section .quick-link button{
+         .home-page .hero-section .quick-link button{
              border-radius: 10px;
              padding: 8px 10px;
              width: 100%;
@@ -103,7 +103,7 @@
             }   
      
      /*grass*/
-         .grass-wrap{
+         .home-page .hero-section .grass-wrap{
              /*border: 2px solid;  /*DELETE*/
              position: relative;
              width: fit-content;
@@ -112,7 +112,7 @@
              margin-bottom: 0;
             }
 
-         .grass-wrap svg{
+        .home-page .hero-section .grass-wrap svg{
             /*border: 2px solid black;  /*DELETE*/
             position: absolute;
             bottom: 0;
@@ -124,7 +124,7 @@
 
 /*KIDS SECTION*/
      /*main*/
-         .kids-section{
+         .home-page .kids-section{
              position: relative;
              background: var(--kidsSec-bg-clr);
              color: var(--kidsSec-elm-clr);
@@ -135,7 +135,7 @@
             }
 
      /*hero*/  
-         .kids-section .hero{
+         .home-page .kids-section .hero{
              /*border: 2px solid  white;  /*DELETE*/
              display: flex;
              flex-direction: column;
@@ -143,12 +143,12 @@
              margin-bottom: 1rem;
             }
         
-         .kids-section .hero .title{
+         .home-page .kids-section .hero .title{
              /*border: 2px solid red;  /*DELETE*/
              margin: 2rem .5rem 0;
             }
 
-         .kids-section .hero p{
+         .home-page .kids-section .hero p{
              /*border: 2px solid black;  /*DELETE*/
              color: var(--kidsSec-hero-p-clr);
              display: block;
@@ -156,7 +156,7 @@
             }      
 
      /*cards*/
-         .kids-section .kids-cards{
+         .home-page .kids-section .kids-cards{
              /*border: 2px solid black;  /*DELETE*/
              display: grid;
              grid-template-columns: repeat(3,1fr);
@@ -167,7 +167,7 @@
              margin-bottom: 1rem;
             }
 
-         .kids-section .kids-cards .card{
+         .home-page .kids-section .kids-cards .card{
              border: 2px solid;  
              display: flex;
              flex-direction: column;
@@ -176,7 +176,7 @@
              border-radius: 23px;
             }
          
-         .kids-section .kids-cards .card .icon{
+         .home-page .kids-section .kids-cards .card .icon{
              border: 2px solid black; 
              width: 70px;
              height: 70px;
@@ -186,22 +186,22 @@
              border-radius: 15px;
             } 
 
-         .kids-section .kids-cards .card .icon svg{
+         .home-page .kids-section .kids-cards .card .icon svg{
             width: 60px;
             height: 60px;
          }   
             
-         .kids-section .kids-cards .card .subtitle{
+         .home-page .kids-section .kids-cards .card .subtitle{
              /*border: 2px solid green;  /*DELETE*/
              width: 80%;
             }   
 
-         .kids-section .kids-cards .card a{
+         .home-page .kids-section .kids-cards .card a{
              min-width: 100px;
              max-width: 200px;
          }   
          
-         .kids-section .kids-cards .card .button{
+         .home-page .kids-section .kids-cards .card .button{
              /*border: 2px solid yellow;  /*DELETE*/
              width: 170px;
              min-width: 100px;
@@ -213,37 +213,37 @@
 
 /*PARENTS SECTION*/
      /*main*/
-         .parents-section{
+         .home-page .parents-section{
              background: var(--parentsSec-bg-clr);
              color: var(--parentsSec-elm-clr);
              min-height: 30dvh;
             }
 
      /*hero*/
-         .parents-section .hero{
+         .home-page .parents-section .hero{
              /*border: 2px solid brown;  /*DELETE*/
              display: flex;
              flex-direction: column;
              gap: 0px;
             } 
 
-         .parents-section .hero .title{
+         .home-page .parents-section .hero .title{
              /*border: 2px solid green;  /*DELETE*/
              margin: 2rem .5rem 0;
             }
             
-         .parents-section .hero .subtitle{
+         .home-page .parents-section .hero .subtitle{
              /*border: 2px solid red;  /*DELETE*/
              margin: 1rem .5rem 2rem;
             }   
          
      /*learn-more*/
-         .parents-section .learn-more{
+         .home-page .parents-section .learn-more{
              /*border: 2px solid black;  /*DELETE*/
              font-size: 1rem;
             }   
 
-         .parents-section .learn-more button{
+         .home-page .parents-section .learn-more button{
              /*border: 2px solid black;  /*DELETE*/
              width: 50%;
              min-width: 200px;
@@ -255,43 +255,43 @@
             }    
 
 @media (max-width: 3000px) {
-     .kids-section .kids-cards{
+     .home-page .kids-section .kids-cards{
              grid-template-columns: 1fr;
      }
 }       
 
 @media (max-width: 850px){
-    .grass-wrap{
+    .home-page .grass-wrap{
         display: none;
     }
-    .hero-section .tagline{
+    .home-page .hero-section .tagline{
         display: unset;
     }
-    .hero-section .quick-link{
+    .home-page .hero-section .quick-link{
         margin-bottom: 9rem;
     }
-     .hero-section .logo-wrap{
+     .home-page .hero-section .logo-wrap{
             width: 70%;
             min-width: 470px;
     }
-    .hero-section .logo.xl{
+    .home-page .hero-section .logo.xl{
         display: none;
     }
-    .hero-section .logo.md{
+    .home-page .hero-section .logo.md{
         display: unset;
         min-width: 300px;
     }
 }
 
 @media (max-width: 500px) {
-      .hero-section .logo-wrap{
+      .home-page .hero-section .logo-wrap{
             width: 100%;
             min-width: 450px;
     }
 }
 
 @media (max-width: 370px) {
-        .hero-section .logo-wrap{
+        .home-page .hero-section .logo-wrap{
             min-width: 350px;
             height: 350px;
     }

@@ -1,20 +1,24 @@
 
 import "./learn.css";
+import HeroSection from "./components/HeroSection";
+import BooksSlider from "./components/BooksSlider";
+import VideosSlider from "./components/VideosSlider";
+import books from "./components/mockBooks";
+import videos from "./components/mockVideos";
+
 
 export default function LearnPage(){
     return(
         <main className="learn-page">
-            <h1>Learn Land</h1>
-            <p>You can learn here everything about recycling 
-               by reading, watching 
-            </p>
+             <HeroSection />
+               <div className="books-container">
+               <BooksSlider books={books}/>
+            </div>
 
-            <div className="vdContainer">
-                <h2 className="title">Videos</h2>
+            <div className="videos-container">
+                <VideosSlider videos={videos} />
             </div>
-            <div className="booksContainer">
-                <h2 className="title">Books</h2>
-            </div>
+          
         </main>
     );
 }

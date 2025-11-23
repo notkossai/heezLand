@@ -30,7 +30,7 @@
              --nav-elm-clr: #184a1a;
              /*states*/
                  /*hover*/
-                     --nav-elm-bg-clr-hvr: linear-gradient(90deg, #4caf50 0%, #2196f3 50%, #81d4fa 100%);
+                     --nav-elm-bg-clr-hvr: linear-gradient(90deg, #e8e0cc 0%, #e2d6b7 50%, #c9bea5 100%);
                      --nav-elm-brd-clr-hvr: #6fd08c;
                  /*active*/
                      --nav-elm-bg-clr-actv: #e1f5fe;
@@ -94,6 +94,4 @@
      /*main*/
          --socialsPg-bg-clr: gray;
          --socialsPg-elm-clr: black;
-
-
 }
