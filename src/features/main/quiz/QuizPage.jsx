@@ -1,13 +1,14 @@
 
 import "./quiz.css";
+import HeroSection from "./components/HeroSection";
+import QuizzesSlider from "./components/QuizSlider";
+import quiz from "./components/mockQuizzes";
 
 export default function QuizPage(){
     return(
         <main className="quiz-page">
-            <h1>Quiz Land</h1>
-            <p>Quiz helps children learn more about recycling
-               and caring for the planet through fun quizzes.
-            </p>
+            <HeroSection />
+            <QuizzesSlider quiz={quiz} />
         </main>
     );
 }
