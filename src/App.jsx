@@ -17,9 +17,13 @@ import SupportPage from "./features/extras/support/Support";
 import OtherPage from "./features/extras/other/Other";
 
 
+import { Game1Provider } from "../contexts/games";
+
+
 
 export default function App() {
     return (
+        <Game1Provider>
         <Router>
             <Routes>
                 <Route path="/"
@@ -104,5 +108,6 @@ export default function App() {
             </Routes>
                             <Footer />
         </Router>
+        </Game1Provider>
     );
 }

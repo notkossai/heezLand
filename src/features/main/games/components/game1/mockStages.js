@@ -1,0 +1,55 @@
+const stages = [
+  {
+    id: 1,
+    name: "Stage 1",
+    correctNeeded: 5,
+    maxMistakes: 10,
+    hints: 5,
+    isCompleted: false,
+    coins: 10,
+    bins: 4,
+    trash: [
+      { id: 1, name: "Newspaper", bin: "blue" },
+      { id: 2, name: "Soda Can", bin: "yellow" },
+      { id: 3, name: "Apple Core", bin: "brown" },
+      { id: 4, name: "Glass Bottle", bin: "green" },
+      { id: 5, name: "Plastic Bottle", bin: "yellow" },
+    ],
+  },
+  {
+    id: 2,
+    name: "Stage 2",
+    correctNeeded: 10,
+    maxMistakes: 8,
+    hints: 5,
+    isCompleted: false,
+    coins: 25,
+    bins: 4,
+    trash: [
+      { id: 1, name: "Newspaper", bin: "blue" },
+      { id: 2, name: "Soda Can", bin: "yellow" },
+      { id: 3, name: "Apple Core", bin: "brown" },
+      { id: 4, name: "Glass Bottle", bin: "green" },
+      { id: 5, name: "Plastic Bottle", bin: "yellow" },
+    ],
+  },
+  {
+    id: 3,
+    name: "Stage 3",
+    correctNeeded: 20,
+    maxMistakes: 5,
+    hints: 0,
+    isCompleted: false,
+    coins: 35,
+    bins: 5,
+    trash: [
+      { id: 1, name: "Newspaper", bin: "blue" },
+      { id: 2, name: "Soda Can", bin: "yellow" },
+      { id: 3, name: "Apple Core", bin: "brown" },
+      { id: 4, name: "Glass Bottle", bin: "green" },
+      { id: 5, name: "Plastic Bottle", bin: "yellow" },
+    ],
+  },
+];
+
+export default stages;
