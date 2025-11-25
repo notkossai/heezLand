@@ -1,14 +1,18 @@
 
 import "./quiz.css";
 import HeroSection from "./components/HeroSection";
-import QuizzesSlider from "./components/QuizSlider";
-import quiz from "./components/mockQuizzes";
+import GeneralQuizSlider from "./components/GeneralQuizSlider";
+import PersonaQuizSlider from "./components/PersonaQuizSlider";
 
-export default function QuizPage(){
+import generalQuiz from "./components/mockGeneralQuiz";
+import personaQuiz from "./components/mockPersonaQuiz";
+
+export default function QuizPage(){    
     return(
         <main className="quiz-page">
             <HeroSection />
-            <QuizzesSlider quiz={quiz} />
+            <GeneralQuizSlider quiz={generalQuiz} />
+            <PersonaQuizSlider quiz={personaQuiz} />
         </main>
     );
 }

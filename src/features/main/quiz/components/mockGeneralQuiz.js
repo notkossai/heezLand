@@ -1,4 +1,4 @@
-const quiz = [
+const generalQuiz = [
   {
     _id: 1,
     cover: "/img/president.jpg",
@@ -64,4 +64,4 @@ const quiz = [
   }
 ];
 
-export default quiz;
+export default generalQuiz;

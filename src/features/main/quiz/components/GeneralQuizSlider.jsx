@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import quiz from "./mockQuizzes";
+import generalQuiz from "./mockGeneralQuiz";
 
-export default function QuizSlider({quiz}) {
+export default function GeneralQuizSlider({quiz}) {
  const [seenNew, setSeenNew] = useState({});
 
      const handleClick = (id) => {
@@ -9,28 +9,28 @@ export default function QuizSlider({quiz}) {
      }
 
     return(
-        <main className="quiz-slider">
+        <main className="general quiz-slider">
             <div className="section-title-row">
   <div className="section-line"></div>
   <span className="section-title">Quiz Land</span>
   <div className="section-line"></div>
 </div>
             <div className="quizContainer">
-                {quiz.map((quiz) => (
+                {quiz.map((generalQuiz) => (
                     <div 
                     className="quizCard"
-                    key={quiz._id}
+                    key={generalQuiz._id}
                     onClick={() => 
-                        handleClick(quiz._id)}>
-                        {!seenNew[quiz._id] && quiz.isNew && (
+                        handleClick(generalQuiz._id)}>
+                        {!seenNew[generalQuiz._id] && generalQuiz.isNew && (
                             <span className="new-tag">NEW</span>
                         )}
                     
                 <div className="cover">
-                    <img src={quiz.cover} alt={quiz.title}/>
+                    <img src={generalQuiz.cover} alt={generalQuiz.title}/>
                 </div>
-                <h2 className="title">{quiz.title}</h2>
-                <div className="cardBottom-wrapper"> <h3 className="qstsNumber">{quiz.nbQsts} questions</h3>
+                <h2 className="title">{generalQuiz.title}</h2>
+                <div className="cardBottom-wrapper"> <h3 className="qstsNumber">{generalQuiz.nbQsts} questions</h3>
                </div>
                
             </div>
