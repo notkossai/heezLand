@@ -1,10 +1,15 @@
 import "./socials.css";
 
+import EmailUs from "./components/EmailUs";
+import SocialMedia from "./components/SocialMedia";
+import HeroSection from "./components/HeroSection";
+
 export default function SocialsPage(){
     return(
         <main className="socials-page">
-            <h1>Socials Page</h1>
-            <p>All our socials can be found here</p>
+           <HeroSection />
+           <SocialMedia />
+           <EmailUs />
         </main>
     );
 }
