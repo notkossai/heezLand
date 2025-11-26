@@ -1,6 +1,8 @@
 TYPE(scope): short subject
 
-Longer description - explain what and why, not how.
+what: /
+
+why: /
 
 #Codification
      #Version States
@@ -22,4 +24,3 @@ Longer description - explain what and why, not how.
          #FEAT: New Feature
          #REFACTOR: Code Chnage(not debug, not feature)
          #WIP: Work In Progress    
-Refs: #ISSUE
