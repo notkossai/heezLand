@@ -1,0 +1,94 @@
+.coins-display {
+  background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+  border-radius: 12px;
+  padding: 1rem;
+  border: 3px solid #ffb74d;
+}
+
+.coins-balance {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.coins-icon {
+  font-size: 2.5rem;
+  animation: coinFloat 3s ease-in-out infinite;
+}
+
+.coins-info {
+  flex: 1;
+}
+
+.coins-label {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #ff6f00;
+  font-weight: 600;
+}
+
+.coins-amount {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #f57f17;
+}
+
+.coins-achievements {
+  border-top: 2px solid #ffb74d;
+  padding-top: 1rem;
+}
+
+.coins-achievements__title {
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: #ff6f00;
+  font-weight: 700;
+}
+
+.coins-achievements__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.achievement-icon {
+  font-size: 1.2rem;
+}
+
+.achievement-activity {
+  flex: 1;
+  color: #ff9100;
+  font-weight: 600;
+}
+
+.achievement-coins {
+  color: #f57f17;
+  font-weight: 700;
+}
+
+@keyframes coinFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@media (max-width: 480px) {
+  .coins-display {
+    padding: 0.75rem;
+  }
+  
+  .coins-amount {
+    font-size: 1.5rem;
+  }
+}

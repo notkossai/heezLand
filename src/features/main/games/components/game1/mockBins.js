@@ -1,12 +1,12 @@
 const bins = [
-  { id: "blue", label: "Blue" },
-  { id: "green", label: "Green" },
-  { id: "yellow", label: "Yellow" },
-  { id: "brown", label: "Brown" },
-  { id: "black", label: "Black" },
-  { id: "red", label: "Red" },
-  { id: "orange", label: "Orange" },
-  { id: "gray", label: "Gray" },
+  { id: "blue", label: "Blue", icon: "🔵" },
+  { id: "green", label: "Green", icon: "🟢" },
+  { id: "yellow", label: "Yellow", icon: "🟡" },
+  { id: "brown", label: "Brown", icon: "🟤" },
+  { id: "black", label: "Black", icon: "⚫" },
+  { id: "red", label: "Red", icon: "🔴" },
+  { id: "orange", label: "Orange", icon: "🟠" },
+  { id: "gray", label: "Gray", icon: "⚪" },
 ];
 
 export default bins;

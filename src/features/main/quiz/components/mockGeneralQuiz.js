@@ -1,67 +1,65 @@
-const generalQuiz = [
+export default [
   {
     _id: 1,
-    cover: "/img/president.jpg",
-    title: "U.S. presidents",
-    nbQsts: 15,
+    title: 'Plastic Facts',
+    nbQsts: 8,
     isNew: true,
-    completed: true,
-    coins: 25
+    completed: false,
+    coins: 20,
+    description: 'Learn about different types of plastic and recycling'
   },
   {
     _id: 2,
-    cover: "/img/lynx.jpg",
-    title: "Lynx",
-    nbQsts: 7,
+    title: 'Glass Recycling',
+    nbQsts: 6,
     isNew: false,
     completed: false,
-    coins: 20
+    coins: 18,
+    description: 'Understand how glass is recycled infinitely'
   },
   {
     _id: 3,
-    cover: "/img/panda.jpg",
-    title: "All things panda",
-    nbQsts: 10,
+    title: 'Paper & Cardboard',
+    nbQsts: 7,
     isNew: true,
     completed: false,
-    coins: 30
+    coins: 22,
+    description: 'Discover the paper recycling process'
   },
   {
     _id: 4,
-    cover: "/img/giraffe.jpg",
-    title: "Giraffes",
-    nbQsts: 8,
+    title: 'Metal Recycling',
+    nbQsts: 5,
     isNew: false,
     completed: false,
-    coins: 15
+    coins: 15,
+    description: 'Learn about aluminum and steel recycling'
   },
-    {
+  {
     _id: 5,
-    cover: "/img/lynx.jpg",
-    title: "Lynx",
-    nbQsts: 7,
-    isNew: false,
+    title: 'Composting Basics',
+    nbQsts: 9,
+    isNew: true,
     completed: false,
-    coins: 20
+    coins: 25,
+    description: 'Turn food scraps into soil'
   },
   {
     _id: 6,
-    cover: "/img/panda.jpg",
-    title: "All things panda",
+    title: 'Carbon Footprint',
     nbQsts: 10,
-    isNew: true,
+    isNew: false,
     completed: false,
-    coins: 30
+    coins: 28,
+    description: 'Understand environmental impact'
   },
   {
     _id: 7,
-    cover: "/img/giraffe.jpg",
-    title: "Giraffes",
-    nbQsts: 8,
-    isNew: false,
+    title: 'E-Waste Challenge',
+    nbQsts: 7,
+    isNew: true,
     completed: false,
-    coins: 15
+    coins: 24,
+    description: 'Electronics and recycling'
   }
 ];
-
-export default generalQuiz;

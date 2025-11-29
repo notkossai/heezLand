@@ -1,24 +1,30 @@
+import { useState } from 'react';
+import HeroSection from './components/HeroSection';
+import ContentSection from './components/ContentSection';
+import BooksSlider from './components/BooksSlider';
+import VideosSlider from './components/VideosSlider';
+import Reader from './components/Reader';
+import CommentsSection from './components/CommentsSection';
+import './learn.css';
 
-import "./learn.css";
-import HeroSection from "./components/HeroSection";
-import BooksSlider from "./components/BooksSlider";
-import VideosSlider from "./components/VideosSlider";
-import books from "./components/mockBooks";
-import videos from "./components/mockVideos";
+export default function LearnPage() {
+  const [selectedBook, setSelectedBook] = useState(null);
 
-
-export default function LearnPage(){
-    return(
-        <main className="learn-page">
-             <HeroSection />
-               <div className="books-container">
-               <BooksSlider books={books}/>
-            </div>
-
-            <div className="videos-container">
-                <VideosSlider videos={videos} />
-            </div>
-          
-        </main>
+  if (selectedBook) {
+    return (
+      <div className="learn-page">
+        <Reader book={selectedBook} onBack={() => setSelectedBook(null)} />
+      </div>
     );
+  }
+
+  return (
+    <main className="learn-page">
+      <HeroSection />
+      <ContentSection />
+      <BooksSlider onSelectBook={setSelectedBook} />
+      <VideosSlider />
+      <CommentsSection />
+    </main>
+  );
 }

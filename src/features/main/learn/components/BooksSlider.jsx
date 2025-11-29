@@ -1,56 +1,38 @@
-import books from "./mockBooks";
+import { useState } from 'react';
+import mockBooks from './mockBooks';
 
-import { set } from "mongoose";
-import { useState } from "react";
+export default function BooksSlider({ onSelectBook }) {
+  const [scroll, setScroll] = useState(0);
 
-export default function BooksSlider({books}){
-     const [seenNew, setSeenNew] = useState({});
+  const handleScroll = (direction) => {
+    setScroll(prev => prev + (direction === 'left' ? -300 : 300));
+  };
 
-     const handleClick = (id) => {
-        setSeenNew((prev) => ({...prev, [id]:true}));
-     }
+  return (
+    <section className="learn-books">
+      <h2>📕 Educational Books</h2>
+      <div className="slider">
+        <button className="slider__arrow slider__arrow--left" onClick={() => handleScroll('left')}>
+          ←
+        </button>
+        
+        <div className="slider__container">
+          <div className="slider__content" style={{ transform: `translateX(${scroll}px)` }}>
+            {mockBooks.map(book => (
+              <div key={book.id} className="book-card" onClick={() => onSelectBook(book)}>
+                <div className="book-card__cover">📚</div>
+                <h3 className="book-card__title">{book.title}</h3>
+                <p className="book-card__author">by {book.author}</p>
+                <div className="book-card__coins">🪙 {book.coins}</div>
+              </div>
+            ))}
+          </div>
+        </div>
 
-     const handleReward = (id) => {
-        alert("reward claimed!");
-     }
-
-    return(
-        <main className="books-slider">
-            <div className="section-title-row">
-  <div className="section-line"></div>
-  <span className="section-title">Books</span>
-  <div className="section-line"></div>
-</div>
-            <div className="booksContainer">
-                {books.map((book) => (
-                    <div 
-                    className="bookCard"
-                    key={book._id}
-                    onClick={() => 
-                        handleClick(book._id)}>
-                        {!seenNew[book._id] && book.isNew && (
-                            <span className="new-tag">NEW</span>
-                        )}
-                    
-                <div className="cover">
-                    <img src={book.cover} alt={book.title}/>
-                </div>
-                <h2 className="title">{book.title}</h2>
-                <div className="cardBottom-wrapper"> <h3 className="pagesNumber">{book.pages} pages</h3>
-                <button 
-                className="coin-reward"
-                disabled={book.completed} 
-                onClick={(e) => {
-                    e.stopPropagation();
-                    if (!book.completed) handleReward(book._id);
-                }}>+{book.coins}</button> </div>
-               
-            </div>
-                ))}
-                </div>
-<div className="section-title-row">
-      <div className="section-line"></div>
-     </div>
-        </main>
-    );
+        <button className="slider__arrow slider__arrow--right" onClick={() => handleScroll('right')}>
+          →
+        </button>
+      </div>
+    </section>
+  );
 }

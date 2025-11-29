@@ -1,21 +1,29 @@
-import { Link } from "react-router-dom";
-
-import "../home.css"
-
 export default function ParentsSection() {
-    return (
-        <section className="parents-section">
-            <div className="hero">
-                <h1 className="title">Why HeezLand</h1>
-                <p className="subtitle">HeezLand is a safe, educational space where
-                    your child learns to care for the planet - one fun adventure at a time.
-                </p>
-            </div>
-
-            <div className="learn-more">
-                <Link to={"/about"}><button>Discover our project</button></Link>
-                 
-            </div>
-        </section>
-    );
+  return (
+    <section className="parents-section">
+      <div className="parents-container">
+        <h2 className="parents-title">👨‍👩‍👧 For Parents</h2>
+        <p className="parents-subtitle">Monitor your child's learning journey</p>
+        
+        <div className="parents-benefits">
+          <div className="parents-benefit card">
+            <span className="parents-benefit__icon">✓</span>
+            <p>Track learning progress and achievements</p>
+          </div>
+          <div className="parents-benefit card">
+            <span className="parents-benefit__icon">✓</span>
+            <p>Safe, kid-friendly educational platform</p>
+          </div>
+          <div className="parents-benefit card">
+            <span className="parents-benefit__icon">✓</span>
+            <p>No ads, no external links, no distractions</p>
+          </div>
+          <div className="parents-benefit card">
+            <span className="parents-benefit__icon">✓</span>
+            <p>Teach environmental responsibility</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }

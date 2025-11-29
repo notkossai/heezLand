@@ -1,48 +1,185 @@
-.footer{
-    background-color: green;
+import React, { useState } from 'react';
+import quizzes from "./mockQuizzes"
+
+
+export default function QuizzesSlider({quizz}) {
+  const [removedNew, setRemovedNew] = useState([]);
+
+  function handleQuizClick(id) {
+    setRemovedNew([...removedNew, id]);
+    // Navigate or show quiz logic can go here
+  }
+
+  return (
+    <main className="quizzes-slider">
+      <div className="slider-container">
+        {quizzes.map(quiz => (
+          <div className="quiz-card" key={quiz.id} onClick={() => handleQuizClick(quiz.id)}>
+            {/* Tagline for new quizzes */}
+            {quiz.isNew && !removedNew.includes(quiz.id) && (
+              <div className="new-tagline">
+                New!
+              </div>
+            )}
+            <img src={quiz.cover} alt={quiz.title} className="quiz-cover" />
+            <div className="quiz-title">{quiz.title}</div>
+            {/* Coins at bottom right */}
+            <div className="quiz-coins">
+              {quiz.coins} <span role="img" aria-label="coin">🪙</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </main>
+  );
 }
 
-.footer .logo{
-    font-size: 2rem;
-    color: white;
-}
 
-.footer-inner{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
+  const Screen4 = () => {
+    useEffect(() => {
+      if (correct >= selectedStage.correctNeeded) {
+        const timeTaken = Math.floor((Date.now() - startTime) / 1000);
+        setGameResult({ type: "win", time: timeTaken, mistakes });
+        setCompletedStages([...completedStages, selectedStage.id]);
+        setScreen(5);
+      } else if (mistakes >= selectedStage.maxMistakes) {
+        setGameResult({ type: "lose", mistakes });
+        setScreen(5);
+      }
+    }, [correct, mistakes]);
 
-nav.quick-links{
- /*   border: 2px solid;  /*DELETE*/
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 60%;
-}
+    const handleDrop = (binId) => {
+      const trash = selectedStage.trash[currentTrash];
+      if (trash.bin === binId) {
+        setCorrect(correct + 1);
+        setCurrentTrash((currentTrash + 1) % selectedStage.trash.length);
+      } else {
+        setMistakes(mistakes + 1);
+      }
+      setDragged(null);
+    };
 
-.footer .quick-links .title{
-    text-align: center;
-    color: white;
-}
+    const allowDrop = (e) => e.preventDefault();
 
-.footer .quick-links ul{
-    border: 2px solid;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-}
+    const trash = selectedStage.trash[currentTrash];}
 
-.footer .quick-links li{
-    border: 2px solid cyan;
-}
+        return (
+      <div style={{ padding: "20px" }}>
+        {/* Top Bar */}
+        <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "20px" }}>
+          <button onClick={() => setScreen(3)}>← Back</button>
+          <button onClick={() => setScreen(4)}>🔄 Restart</button>
+          <button onClick={() => setSoundOn(!soundOn)}>
+            🔊 {soundOn ? "ON" : "OFF"}
+          </button>
+        </div>
 
-.footer a{
-    text-decoration: none;
-    color: white;
-}
+        {/* Game Title */}
+        <h2 style={{ textAlign: "center" }}>{selectedStage.name}</h2>
 
-.footer .subtitle{
- /*   border: 2px solid;  /*DELETE*/
-    text-align: center;
+        {/* Character & Message */}
+        <div style={{ textAlign: "center", margin: "20px 0" }}>
+          <p>👨 "{messages.finish}"</p>
+        </div>
+
+        {/* Game Stats */}
+        <div style={{ display: "flex", justifyContent: "space-around", marginBottom: "20px" }}>
+          <div>
+            <p>Correct: {correct}/{selectedStage.correctNeeded}</p>
+            <p>Mistakes: {mistakes}/{selectedStage.maxMistakes}</p>
+          </div>
+          <div>
+            <button
+              onClick={() => {
+                if (hintsLeft > 0) {
+                  setHintsLeft(hintsLeft - 1);
+                  alert(`Hint: Sort this in the ${trash.bin} bin!`);
+                }
+              }}
+              disabled={hintsLeft === 0}
+            >
+              💡 Hints: {hintsLeft}
+            </button>
+          </div>
+        </div>
+
+        {/* Trash Element */}
+        <div style={{ textAlign: "center", margin: "20px 0" }}>
+          <div
+            draggable
+            onDragStart={() => setDragged(trash.id)}
+            style={{
+              display: "inline-block",
+              border: "2px solid #ccc",
+              padding: "16px 24px",
+              borderRadius: "8px",
+              background: "#f0f0f0",
+              cursor: "grab",
+            }}
+          >
+            🗑️ {trash.name}
+          </div>
+        </div>
+
+        {/* Bins */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: `repeat(${Math.min(selectedStage.bins, 4)}, 1fr)`,
+            gap: "12px",
+            marginTop: "30px",
+          }}
+        >
+          {bins.slice(0, selectedStage.bins).map(bin => (
+            <div
+              key={bin.id}
+              onDrop={() => handleDrop(bin.id)}
+              onDragOver={allowDrop}
+              style={{
+                border: "2px dashed #444",
+                padding: "20px",
+                borderRadius: "8px",
+                background: "#e0e0e0",
+                textAlign: "center",
+                cursor: "pointer",
+              }}
+            >
+              <div style={{ fontSize: "24px" }}>🟦</div>
+              <p>{bin.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  };
+
+
+
+
+
+
+export default function HeroSection() {
+  return (
+    <section className="hero-section">
+      <div className="hero-section__container">
+        <div className="hero-section__content">
+          <h1 className="hero-section__title">Connect With Heez Land</h1>
+          <p className="hero-section__subtitle">
+            Follow us across all social media platforms for the latest updates and community engagement
+          </p>
+          <div className="hero-section__cta">
+            <a href="#socials" className="hero-section__button">
+              Explore Socials
+            </a>
+          </div>
+        </div>
+        
+        <div className="hero-section__visual">
+          <div className="hero-section__gradient-blob hero-section__gradient-blob--1"></div>
+          <div className="hero-section__gradient-blob hero-section__gradient-blob--2"></div>
+          <div className="hero-section__gradient-blob hero-section__gradient-blob--3"></div>
+        </div>
+      </div>
+    </section>
+  );
 }

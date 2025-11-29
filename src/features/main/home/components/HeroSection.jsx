@@ -1,35 +1,35 @@
+import { Link } from 'react-router-dom';
+import CoinSvg from "@/assets/svg/brand/coin.svg?react";
 
-/*svg*/
-import GrassSvg from "@/assets/svg/green-grass.svg?react";
-import HeroLogoSvg from "@/assets/svg/brand/msct_heez_lpr.svg?react"
-import HeroLogoMdSvg from "@/assets/svg/brand/circle_msct_heez.svg?react"
-
-/*css*/
-     import "../home.css";
-
-
-export default function HeroSection() {
-    return (
-        <section className="hero-section">
-
-            <div className="tagline">
-                <p id="typingText">Learn, Play, Recycle - The eco-education 
-                    platform for kids & families.
-                </p>
-            </div>
-
-            <div className="logo-wrap">
-                <HeroLogoSvg className="logo xl" />
-                <HeroLogoMdSvg className="logo md" />
-            </div>
-
-            <div className="quick-link">
-                <button className="toKids">Go to kids</button>
-                <button className="toParents">Go to parents</button>
-            </div>
-            <div className="grass-wrap">
-                 <GrassSvg />
-            </div>
-        </section>
-    );
+export default function HeroSection({ coins }) {
+  return (
+    <section className="hero">
+      <div className="hero__content">
+        <h1 className="hero__title">🌍 Welcome to Heez Land</h1>
+        <p className="hero__subtitle">
+          Learn to recycle, earn coins, and save our planet!
+        </p>
+        <div className="hero__stats">
+          <div className="hero__stat">
+            <div className="hero__stat-icon"><CoinSvg /></div>
+            <span className="hero__stat-value">{coins}</span>
+            <span className="hero__stat-label">Your Coins</span>
+          </div>
+        </div>
+        <div className="hero__buttons">
+          <Link to="/learn" className="hero__button hero__button--primary">
+            Explore Learning →
+          </Link>
+          <Link to="/games" className="hero__button hero__button--secondary">
+            Play Games →
+          </Link>
+        </div>
+      </div>
+      <div className="hero__graphics">
+        <div className="hero__decoration hero__decoration--1">🌱</div>
+        <div className="hero__decoration hero__decoration--2">♻️</div>
+        <div className="hero__decoration hero__decoration--3">🌍</div>
+      </div>
+    </section>
+  );
 }

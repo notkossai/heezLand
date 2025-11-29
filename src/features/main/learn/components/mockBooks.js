@@ -1,48 +1,65 @@
-const books =[
+export default [
   {
-    _id: "1",
-    cover: "/covers/recycle-superheroes.jpg",
-    title: "Recycle Superheroes: The Adventure Begins",
-    pages: 32,
-    isNew: true,
-    completed: false,
-    coins: 10
+    id: 1,
+    title: 'Plastics Journey',
+    author: 'Dr. Green',
+    coins: 30,
+    content: `# The Life of Plastic
+
+Plastic is one of the most important materials of our time, but it's also one of the most problematic when not recycled properly.
+
+## History of Plastic
+Plastic was invented in the early 1900s and has revolutionized manufacturing and daily life...
+
+## Types of Plastic
+There are 7 main types of plastic, labeled with numbers 1-7...
+
+## Recycling Process
+When plastic is recycled, it goes through a cleaning and melting process...
+
+## Your Role
+As a student, you can help by sorting plastic correctly and encouraging others to recycle!`
   },
   {
-    _id: "2",
-    cover: "/covers/green-team-comics.jpg",
-    title: "Green Team Comics: Mission Recycle",
-    pages: 28,
-    isNew: true,
-    completed: false,
-    coins: 12
+    id: 2,
+    title: 'Glass Forever',
+    author: 'Ms. Clear',
+    coins: 25,
+    content: `# The Magic of Glass Recycling
+
+Glass is one of the most recyclable materials on Earth.
+
+## Why Glass Matters
+Glass doesn't degrade or lose its properties when recycled...
+
+## The Recycling Process
+Glass collection → Sorting → Crushing → Melting → New Products...
+
+## Environmental Benefits
+Recycling glass saves energy and reduces carbon emissions...
+
+## Fun Fact
+Glass can be recycled infinitely without losing quality!`
   },
   {
-    _id: "3",
-    cover: "/covers/planet-protectors.jpg",
-    title: "Planet Protectors: Sorting It Out",
-    pages: 30,
-    isNew: false,
-    completed: false,
-    coins: 9
-  },
-  {
-    _id: "4",
-    cover: "/covers/bin-buddies.jpg",
-    title: "Bin Buddies Save The Day",
-    pages: 26,
-    isNew: false,
-    completed: false,
-    coins: 8
-  },
-  {
-    _id: "5",
-    cover: "/covers/eco-kids-comics.jpg",
-    title: "Eco Kids Comic: The Mystery of the Missing Paper",
-    pages: 34,
-    isNew: true,
-    completed: false,
-    coins: 14
+    id: 3,
+    title: 'Paper Trail',
+    author: 'Mr. Leaf',
+    coins: 20,
+    content: `# Understanding Paper Recycling
+
+Paper is one of the most recycled materials worldwide.
+
+## From Tree to Paper
+Trees are harvested → Processed into pulp → Made into paper...
+
+## Recycling Paper
+Collection → De-inking → Pulping → New products...
+
+## Why It Matters
+Recycling paper saves trees and reduces water consumption...
+
+## Your Challenge
+Help collect paper for recycling in your school and home!`
   }
-]
-export default books;
+];

@@ -1,8 +1,14 @@
-const messages = {
-  start: "Good luck, start collecting!",
-  winning: "You're doing great, keep it up!",
-  losing: "Be careful, one mistake and you lose!",
-  finish: "Finish {needed} to win!",
+export default {
+  correct: [
+    'Great job! 🌟',
+    'Perfect! ✨',
+    'Awesome! 🎉',
+    'Excellent! 👏'
+  ],
+  wrong: [
+    'Oops, try again! 💪',
+    'Not quite, keep going! 🔄',
+    'Close! Try another bin! 🎯',
+    'Give it another try! 💙'
+  ]
 };
-
-export default messages;

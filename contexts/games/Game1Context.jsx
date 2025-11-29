@@ -1,40 +1,49 @@
-import { createContext, useState, useEffect } from "react";
+import React, { createContext, useState, useCallback } from 'react';
 
 export const Game1Context = createContext();
 
-export const Game1Provider = ({ children }) => {
-  const [completedStages, setCompletedStages] = useState([]);
-  const [soundOn, setSoundOn] = useState(true);
-  const [isLoaded, setIsLoaded] = useState(false);
+export function Game1Provider({ children }) {
+  const [score, setScore] = useState(0);
+  const [level, setLevel] = useState(1);
+  const [completed, setCompleted] = useState(false);
+  const [recyclables, setRecyclables] = useState([]);
 
-  useEffect(() => {
-    const savedProgress = localStorage.getItem("game1Progress");
-    if (savedProgress) {
-      try {
-        const progress = JSON.parse(savedProgress);
-        setCompletedStages(progress.completedStages || []);
-        setSoundOn(progress.soundOn !== undefined ? progress.soundOn : true);
-      } catch (error) {
-        console.error("Error loading Game1 progress:", error);
-      }
-    }
-    setIsLoaded(true);
+  const addRecyclable = useCallback((item) => {
+    setRecyclables(prev => [...prev, item]);
+    setScore(prev => prev + 10);
   }, []);
 
-  useEffect(() => {
-    if (isLoaded) {
-      const progress = {
-        completedStages,
-        soundOn,
-        lastSavedAt: new Date().toISOString(),
-      };
-      localStorage.setItem("game1Progress", JSON.stringify(progress));
-    }
-  }, [completedStages, soundOn, isLoaded]);
+  const levelUp = useCallback(() => {
+    setLevel(prev => prev + 1);
+    setScore(prev => prev + 50);
+  }, []);
+
+  const completeGame = useCallback(() => {
+    setCompleted(true);
+    setScore(prev => prev + 100);
+  }, []);
+
+  const value = {
+    score,
+    level,
+    completed,
+    recyclables,
+    addRecyclable,
+    levelUp,
+    completeGame
+  };
 
   return (
-    <Game1Context.Provider value={{ completedStages, setCompletedStages, soundOn, setSoundOn, isLoaded }}>
+    <Game1Context.Provider value={value}>
       {children}
     </Game1Context.Provider>
   );
-};
+}
+
+export function useGame1() {
+  const context = React.useContext(Game1Context);
+  if (!context) {
+    throw new Error('useGame1 must be used within Game1Provider');
+  }
+  return context;
+}
