@@ -16,7 +16,7 @@ export default function DevSocials() {
         {
           platform: "LinkedIn",
           handle: "Medjadi Kossai",
-          url: "https://www.linkedin.com/in/medjadi-kossai-082971362",
+          url: "https://dz.linkedin.com/in/medjadi-kossai-082971362",
           icon: LinkedInSvg
         }
       ]
@@ -34,7 +34,7 @@ export default function DevSocials() {
         {
           platform: "LinkedIn",
           handle: "Belhoudedj Kheira",
-          url: "https://www.linkedin.com/in/kheira-belhoudedj-853828308",
+          url: "https://dz.linkedin.com/in/belhoudedj-kheira",
           icon: LinkedInSvg
         }
       ]
@@ -43,14 +43,12 @@ export default function DevSocials() {
 
   return (
     <main className="dev-socials-section">
-      <h1 className="dev-socials-section__title">Our Developers</h1>
+      <h1>Our Developers</h1>
       <div className="dev-socials-grid">
         {developers.map((dev) => {
-          const { platform, handle, url, icon: IconComponent } = dev.socials[0];
-          
           return (
             <div key={dev.id} className="dev-profile">
-              <h2 className="dev-profile__name">{dev.name}</h2>
+              <h2>{dev.name}</h2>
               {dev.socials.map((social) => {
                 const SocialIcon = social.icon;
                 return (
@@ -66,7 +64,7 @@ export default function DevSocials() {
                     </div>
                     <div className="dev-social-card__content">
                       <h3 className="dev-social-card__platform">{social.platform}</h3>
-                       <p>{social.handle}</p>
+                      <p className="dev-social-card__handle">{social.handle}</p>
                     </div>
                   </a>
                 );

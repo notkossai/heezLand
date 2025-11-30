@@ -1,65 +1,121 @@
-export default [
+export const mockBooks = [
   {
     id: 1,
-    title: 'Plastics Journey',
-    author: 'Dr. Green',
-    coins: 30,
-    content: `# The Life of Plastic
+    title: 'Recycling Basics',
+    author: 'Earth Friends',
+    coins: 10,
+    locked: false,
+    isNew: true,
+    createdAt: Date.now(),
+    content: `Recycling is the process of collecting and processing waste materials and transforming them into new products. It helps reduce the amount of waste in landfills and conserves natural resources.
 
-Plastic is one of the most important materials of our time, but it's also one of the most problematic when not recycled properly.
+The three main steps of recycling are:
+1. Collection - Gathering recyclable materials from homes and businesses
+2. Processing - Sorting and cleaning the materials
+3. Manufacturing - Using the materials to create new products
 
-## History of Plastic
-Plastic was invented in the early 1900s and has revolutionized manufacturing and daily life...
-
-## Types of Plastic
-There are 7 main types of plastic, labeled with numbers 1-7...
-
-## Recycling Process
-When plastic is recycled, it goes through a cleaning and melting process...
-
-## Your Role
-As a student, you can help by sorting plastic correctly and encouraging others to recycle!`
+By recycling, you help protect our planet for future generations!`
   },
   {
     id: 2,
-    title: 'Glass Forever',
-    author: 'Ms. Clear',
-    coins: 25,
-    content: `# The Magic of Glass Recycling
+    title: 'Plastic Planet',
+    author: 'Ocean Guardians',
+    coins: 15,
+    locked: true,
+    isNew: false,
+    createdAt: Date.now() - 86400000,
+    content: `Plastics make up a large portion of our waste and pose a significant threat to our oceans. Every year, millions of tons of plastic end up in the sea, harming marine life.
 
-Glass is one of the most recyclable materials on Earth.
+Ways to reduce plastic consumption:
+- Use reusable bags instead of plastic bags
+- Choose products with minimal plastic packaging
+- Avoid single-use plastics like straws and cups
+- Support companies that use sustainable packaging
 
-## Why Glass Matters
-Glass doesn't degrade or lose its properties when recycled...
-
-## The Recycling Process
-Glass collection → Sorting → Crushing → Melting → New Products...
-
-## Environmental Benefits
-Recycling glass saves energy and reduces carbon emissions...
-
-## Fun Fact
-Glass can be recycled infinitely without losing quality!`
+Together, we can make a difference for our oceans!`
   },
   {
     id: 3,
-    title: 'Paper Trail',
-    author: 'Mr. Leaf',
-    coins: 20,
-    content: `# Understanding Paper Recycling
+    title: 'Go Green',
+    author: 'Nature Warriors',
+    coins: 12,
+    locked: false,
+    isNew: true,
+    createdAt: Date.now(),
+    content: `Being green means making choices that are good for the environment and our future. It's not just about recycling - it's a whole lifestyle!
 
-Paper is one of the most recycled materials worldwide.
+Green practices include:
+- Reducing energy consumption at home
+- Growing your own food
+- Using public transportation
+- Supporting renewable energy
+- Composting organic waste
+- Using eco-friendly products
 
-## From Tree to Paper
-Trees are harvested → Processed into pulp → Made into paper...
+Every small action counts towards a healthier planet!`
+  },
+  {
+    id: 4,
+    title: 'Paper & Cardboard',
+    author: 'Eco Teachers',
+    coins: 8,
+    locked: false,
+    isNew: false,
+    createdAt: Date.now() - 172800000,
+    content: `Paper recycling is one of the easiest and most common forms of recycling. Paper can be recycled multiple times without losing quality.
 
-## Recycling Paper
-Collection → De-inking → Pulping → New products...
+What you can recycle:
+- Newspapers and magazines
+- Cardboard boxes
+- Office paper
+- Paper bags
+- Egg cartons
 
-## Why It Matters
-Recycling paper saves trees and reduces water consumption...
+Did you know? Recycling one ton of paper saves 17 trees, 7,000 gallons of water, and enough energy to power a home for 6 months!`
+  },
+  {
+    id: 5,
+    title: 'Metal Matters',
+    author: 'Recycling Experts',
+    coins: 11,
+    locked: false,
+    isNew: false,
+    createdAt: Date.now() - 259200000,
+    content: `Metals like aluminum and steel are infinitely recyclable without losing their properties. Metal recycling is extremely important for sustainability.
 
-## Your Challenge
-Help collect paper for recycling in your school and home!`
+Benefits of metal recycling:
+- Saves 95% energy compared to mining new aluminum
+- Reduces greenhouse gas emissions
+- Creates jobs in the recycling industry
+- Conserves finite natural resources
+
+Common recyclable metals:
+- Aluminum cans
+- Steel cans
+- Copper wires
+- Aluminum foil
+- Metal containers`
+  },
+  {
+    id: 6,
+    title: 'Glass Forever',
+    author: 'Sustainable Living',
+    coins: 9,
+    locked: true,
+    isNew: false,
+    createdAt: Date.now() - 345600000,
+    content: `Glass is 100% recyclable and can be recycled infinitely without losing its quality or purity. It's one of the best materials for recycling!
+
+Glass recycling facts:
+- Glass never wears out or diminishes in quality
+- Recycled glass reduces melting point, saving energy
+- It takes 1 million years for glass to decompose in nature
+- Recycling glass reduces air and water pollution
+
+Types of recyclable glass:
+- Beer and wine bottles
+- Food jars
+- Beverage containers
+- Colored and clear glass`
   }
 ];

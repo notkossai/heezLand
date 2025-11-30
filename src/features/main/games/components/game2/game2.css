@@ -46,7 +46,7 @@
 
 .game2-welcome p {
   font-size: var(--font-size-xl);
-  color: var(--color-primary);
+  color: var(--color-text-secondary);
   margin-bottom: var(--space-32);
   line-height: var(--line-height-normal);
 }
@@ -56,6 +56,9 @@
    ============================================ */
 
 .game2-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: var(--space-16) var(--space-32);
   font-size: var(--font-size-base);
   border: none;
@@ -265,7 +268,7 @@
 }
 
 /* ============================================
-   RESPONSIVE - TABLET (1024px)
+   RESPONSIVE - LAPTOP (1024px)
    ============================================ */
 
 @media (max-width: 1024px) {
@@ -462,22 +465,6 @@
    ACCESSIBILITY
    ============================================ */
 
-@media (prefers-reduced-motion: reduce) {
-  .game2-welcome,
-  .game2-result,
-  .game2-quiz,
-  .game2-btn,
-  .game2-option {
-    animation: none;
-    transition: none;
-  }
-
-  .game2-btn:hover:not(:disabled),
-  .game2-option:hover:not(:disabled) {
-    transform: none;
-  }
-}
-
 @media (prefers-contrast: more) {
   .game2-welcome,
   .game2-result,
@@ -501,12 +488,25 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .game2-feedback {
-    background: rgba(var(--color-info-rgb), var(--status-bg-opacity));
+@media (prefers-reduced-motion: reduce) {
+  .game2-welcome,
+  .game2-result,
+  .game2-quiz {
+    animation: none;
   }
-}
 
-[data-color-scheme="dark"] .game2-feedback {
-  background: rgba(var(--color-info-rgb), var(--status-bg-opacity));
+  .game2-btn,
+  .game2-option {
+    transition: none;
+  }
+
+  .game2-btn:hover,
+  .game2-option:hover {
+    transform: none;
+  }
+
+  .game2-btn:active,
+  .game2-option:active {
+    transform: none;
+  }
 }

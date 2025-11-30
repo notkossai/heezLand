@@ -1,18 +1,20 @@
 export default function HeroSection() {
   return (
-    <section className="quiz-hero">
-      <div className="quiz-hero__content">
-        <h1 className="quiz-hero__title">🎯 Quiz Land</h1>
-        <p className="quiz-hero__subtitle">
-          Test your recycling knowledge and personality! 
-          Earn coins with every quiz you complete.
-        </p>
+    <>
+      <div className="quiz-hero">
+        <h1>🎯 Quiz Land</h1>
+        <p>Test your recycling knowledge and personality! Earn coins with every quiz you complete.</p>
       </div>
-      <div className="quiz-hero__decoration">
-        <div className="quiz-hero__icon quiz-hero__icon--1">📚</div>
-        <div className="quiz-hero__icon quiz-hero__icon--2">🎯</div>
-        <div className="quiz-hero__icon quiz-hero__icon--3">🌟</div>
+
+      <div className="quiz-container">
+        <section className="quiz-section">
+          <h2>Challenge Yourself</h2>
+          <p>
+            At Heez Land, learning is fun and rewarding! Take our engaging quizzes to test 
+            your knowledge about recycling and sustainability, and earn coins along the way.
+          </p>
+        </section>
       </div>
-    </section>
+    </>
   );
 }

@@ -1,5 +1,6 @@
 /* ============================================
-   UNDER CONSTRUCTION PAGE STYLES
+   UNDER CONSTRUCTION PAGE - UNIFIED DESIGN SYSTEM
+   Extends globals.css with Under Construction theming
    ============================================ */
 
 .under-construction {
@@ -212,7 +213,7 @@
 }
 
 /* ============================================
-   INFO CARD - OLD STYLE
+   INFO CARD
    ============================================ */
 
 .under-construction__info-card {
@@ -355,7 +356,7 @@
 }
 
 /* ============================================
-   RESPONSIVE DESIGN
+   RESPONSIVE - LAPTOP (1024px)
    ============================================ */
 
 @media (max-width: 1024px) {
@@ -367,6 +368,10 @@
     gap: var(--space-32);
   }
 }
+
+/* ============================================
+   RESPONSIVE - TABLET (768px)
+   ============================================ */
 
 @media (max-width: 768px) {
   .under-construction {
@@ -405,6 +410,10 @@
     gap: var(--space-12);
   }
 }
+
+/* ============================================
+   RESPONSIVE - MOBILE PORTRAIT (480px)
+   ============================================ */
 
 @media (max-width: 480px) {
   .under-construction {
@@ -481,20 +490,6 @@
    ACCESSIBILITY
    ============================================ */
 
-@media (prefers-reduced-motion: reduce) {
-  .under-construction__bar::after,
-  .crane,
-  .brick--2,
-  .under-construction__icon {
-    animation: none;
-  }
-
-  .under-construction__button:hover,
-  .under-construction__back-btn:hover {
-    transform: none;
-  }
-}
-
 @media (prefers-contrast: more) {
   .under-construction__button {
     border: 2px solid currentColor;
@@ -510,5 +505,39 @@
 
   .under-construction__bar {
     border-width: 3px;
+  }
+
+  .under-construction__title,
+  .under-construction__info-card h3 {
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .under-construction__icon {
+    animation: none;
+  }
+
+  .under-construction__bar::after {
+    animation: none;
+  }
+
+  .crane {
+    animation: none;
+  }
+
+  .brick--2 {
+    animation: none;
+  }
+
+  .under-construction__button,
+  .under-construction__back-btn,
+  .under-construction__info-card {
+    transition: none;
+  }
+
+  .under-construction__button:hover,
+  .under-construction__back-btn:hover {
+    transform: none;
   }
 }

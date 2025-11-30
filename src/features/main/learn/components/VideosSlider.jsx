@@ -1,49 +1,97 @@
 import { useState } from 'react';
-import { useCoin } from '../../../../../contexts/coins/CoinContext';
-import mockVideos from './mockVideos';
 
-export default function VideosSlider() {
-  const [scroll, setScroll] = useState(0);
-  const { earnCoins } = useCoin();
+function VideoCard({ video, onSelect, isNew, onDismissNew }) {
+  return (
+    <div className="card-item" onClick={onSelect}>
+      {isNew && (
+        <span 
+          className="new-badge" 
+          onClick={(e) => { e.stopPropagation(); onDismissNew(); }}
+        >
+          NEW
+        </span>
+      )}
+      <div className="card-cover">🎬</div>
+      <h3 className="card-title">{video.title}</h3>
+      <p className="card-author">⏱️ {video.duration}</p>
+      <div className="card-footer">
+        <span className="card-free">🆓</span>
+      </div>
+    </div>
+  );
+}
 
-  const handleWatchVideo = (videoTitle) => {
-    earnCoins(10, `Watched: ${videoTitle}`);
+export default function VideosSlider({ 
+  videos, 
+  videoFilter, 
+  onFilterChange, 
+  onSelectVideo, 
+  dismissedNewBadges,
+  onDismissNewBadge,
+  scroll,
+  onScroll 
+}) {
+  const [showFilterMenu, setShowFilterMenu] = useState(false);
+
+  const filterOptions = [
+    { value: 'all', label: 'All Videos' },
+    { value: 'newest', label: 'Newest → Oldest' },
+    { value: 'oldest', label: 'Oldest → Newest' },
+    { value: 'new', label: 'New 🆕' }
+  ];
+
+  const handleFilterChange = (value) => {
+    onFilterChange(value);
+    setShowFilterMenu(false);
   };
 
-  const handleScroll = (direction) => {
-    setScroll(prev => prev + (direction === 'left' ? -300 : 300));
-  };
+  const currentFilterLabel = filterOptions.find(f => f.value === videoFilter)?.label || 'Filter';
 
   return (
-    <section className="learn-videos">
-      <h2>📹 Educational Videos</h2>
-      <div className="slider">
-        <button className="slider__arrow slider__arrow--left" onClick={() => handleScroll('left')}>
-          ←
+    <div className="learn-videos">
+      <h2>🎬 Video Tutorials</h2>
+      
+      <div className="filter-container">
+        <button 
+          className="filter-dropdown-btn"
+          onClick={() => setShowFilterMenu(!showFilterMenu)}
+        >
+          ⚙️ {currentFilterLabel} ▼
         </button>
-        
-        <div className="slider__container">
-          <div className="slider__content" style={{ transform: `translateX(${scroll}px)` }}>
-            {mockVideos.map(video => (
-              <div key={video.id} className="video-card">
-                <div className="video-card__thumbnail">▶️</div>
-                <h3 className="video-card__title">{video.title}</h3>
-                <p className="video-card__duration">{video.duration}</p>
-                <button
-                  className="video-card__button"
-                  onClick={() => handleWatchVideo(video.title)}
-                >
-                  Watch Now
-                </button>
-              </div>
+        {showFilterMenu && (
+          <div className="filter-dropdown-menu">
+            {filterOptions.map(option => (
+              <button
+                key={option.value}
+                className={`filter-dropdown-item ${videoFilter === option.value ? 'active' : ''}`}
+                onClick={() => handleFilterChange(option.value)}
+              >
+                {option.label}
+              </button>
             ))}
           </div>
-        </div>
-
-        <button className="slider__arrow slider__arrow--right" onClick={() => handleScroll('right')}>
-          →
-        </button>
+        )}
       </div>
-    </section>
+
+      <div className="slider-wrapper">
+        <div className="slider">
+          <button className="slider-arrow" onClick={() => onScroll('left')}>←</button>
+          <div className="slider-container">
+            <div className="slider-content" style={{ transform: `translateX(${scroll}px)` }}>
+              {videos.map(video => (
+                <VideoCard
+                  key={video.id}
+                  video={video}
+                  onSelect={() => onSelectVideo(video)}
+                  isNew={video.isNew && !dismissedNewBadges.includes(`video-${video.id}`)}
+                  onDismissNew={() => onDismissNewBadge(video.id, 'video')}
+                />
+              ))}
+            </div>
+          </div>
+          <button className="slider-arrow" onClick={() => onScroll('right')}>→</button>
+        </div>
+      </div>
+    </div>
   );
 }

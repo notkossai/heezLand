@@ -1,5 +1,6 @@
 /* ============================================
-   BLOG PAGE STYLES - KID-FRIENDLY
+   BLOG PAGE - UNIFIED DESIGN SYSTEM
+   Extends globals.css with Blog page theming
    ============================================ */
 
 .blog-page {
@@ -174,7 +175,7 @@
 
 .blog-card__read-more:hover {
   color: var(--color-primary-hover);
-  transform: translateX(4px);
+  transform: translateX(var(--space-4));
 }
 
 .blog-card__read-more:focus-visible {
@@ -215,7 +216,7 @@
 }
 
 /* ============================================
-   RESPONSIVE - TABLET (1024px)
+   RESPONSIVE - LAPTOP (1024px)
    ============================================ */
 
 @media (max-width: 1024px) {
@@ -387,23 +388,6 @@
    ACCESSIBILITY
    ============================================ */
 
-@media (prefers-reduced-motion: reduce) {
-  .blog-page h1,
-  .blog-card,
-  .blog-card__read-more {
-    animation: none;
-    transition: none;
-  }
-
-  .blog-card:hover {
-    transform: none;
-  }
-
-  .blog-card__read-more:hover {
-    transform: none;
-  }
-}
-
 @media (prefers-contrast: more) {
   .blog-card,
   .blog-card__tag,
@@ -419,5 +403,24 @@
 
   .blog-card__read-more {
     text-decoration: underline;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-page h1 {
+    animation: none;
+  }
+
+  .blog-card,
+  .blog-card__read-more {
+    transition: none;
+  }
+
+  .blog-card:hover {
+    transform: none;
+  }
+
+  .blog-card__read-more:hover {
+    transform: none;
   }
 }

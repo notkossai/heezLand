@@ -1,68 +1,44 @@
 import { useState } from 'react';
-import { useCoin } from '../../../../../contexts/coins/CoinContext';
 
-export default function CommentsSection() {
-  const [comments, setComments] = useState([
-    {
-      id: 1,
-      author: 'Alex',
-      text: 'This was very helpful! I learned so much!',
-      date: '2 hours ago'
-    },
-    {
-      id: 2,
-      author: 'Jordan',
-      text: 'Great content! Now I understand recycling better.',
-      date: '1 day ago'
-    }
-  ]);
-  
-  const [newComment, setNewComment] = useState('');
-  const { earnCoins } = useCoin();
+export default function CommentsSection({ comments, onAddComment, placeholder = "Share your thoughts..." }) {
+  const [comment, setComment] = useState('');
 
-  const handlePostComment = () => {
-    if (newComment.trim()) {
-      setComments([...comments, {
-        id: comments.length + 1,
-        author: 'You',
-        text: newComment,
-        date: 'Just now'
-      }]);
-      earnCoins(5, 'Posted a comment');
-      setNewComment('');
+  const handleAddComment = () => {
+    if (comment.trim()) {
+      onAddComment(comment);
+      setComment('');
     }
   };
 
   return (
-    <section className="comments-section">
-      <h3>💬 Comments & Discussion</h3>
-      
+    <div className="comments-section">
+      <h3 className="comments-header">💬 Comments</h3>
       <div className="comments-list">
-        {comments.map(comment => (
-          <div key={comment.id} className="comment">
-            <div className="comment__header">
-              <strong className="comment__author">{comment.author}</strong>
-              <span className="comment__date">{comment.date}</span>
+        {comments.length === 0 ? (
+          <p style={{ color: '#626c7c', textAlign: 'center' }}>Be the first to comment!</p>
+        ) : (
+          comments.map((c, idx) => (
+            <div key={idx} className="comment">
+              <div>
+                <span className="comment-author">{c.author}</span>
+                <span className="comment-date">{c.date}</span>
+              </div>
+              <div className="comment-text">{c.text}</div>
             </div>
-            <p className="comment__text">{comment.text}</p>
-          </div>
-        ))}
+          ))
+        )}
       </div>
-
       <div className="comment-form">
         <textarea
-          value={newComment}
-          onChange={(e) => setNewComment(e.target.value)}
-          placeholder="Share your thoughts..."
-          className="comment-form__input"
+          className="comment-input"
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          placeholder={placeholder}
         />
-        <button
-          onClick={handlePostComment}
-          className="comment-form__button"
-        >
+        <button className="comment-btn" onClick={handleAddComment}>
           Post Comment 💬
         </button>
       </div>
-    </section>
+    </div>
   );
 }

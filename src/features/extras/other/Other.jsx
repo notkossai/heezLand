@@ -58,9 +58,8 @@ export default function OtherPage() {
 
   return (
     <main className="other-page">
-      <h1 className="hero">🌟 Explore More Features</h1>
-      <p className="subtitle">Discover what Heez Land has to offer</p>
-      <p className="comments">Make learning about recycling fun and rewarding!</p>
+      <h1>🌟 Explore More Features</h1>
+      <p className>Discover what Heez Land has to offer</p>
 
       <div className="other-container">
         <div className="other-features">

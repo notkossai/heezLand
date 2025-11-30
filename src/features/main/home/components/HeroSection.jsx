@@ -20,10 +20,10 @@ export default function HeroSection({ coins }) {
         </div>
         <div className="hero__buttons">
           <Link to="/learn" className="hero__button hero__button--primary">
-            Explore Learning →
+            Explore Learning 📚 →
           </Link>
           <Link to="/games" className="hero__button hero__button--secondary">
-            Play Games →
+            Play Games 🎮 →
           </Link>
         </div>
       </div>

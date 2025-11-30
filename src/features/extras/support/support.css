@@ -1,5 +1,6 @@
 /* ============================================
-   SUPPORT PAGE STYLES
+   SUPPORT PAGE - UNIFIED DESIGN SYSTEM
+   Extends globals.css with Support page theming
    ============================================ */
 
 .support-page {
@@ -66,6 +67,7 @@
 .support-option:focus-visible {
   outline: var(--focus-outline);
   outline-offset: 2px;
+  box-shadow: var(--focus-ring);
 }
 
 .support-option__icon {
@@ -106,7 +108,7 @@
   text-decoration: none;
   min-width: 160px;
   margin-bottom: var(--space-12);
-  box-shadow: var(--shadow-inset-sm);
+  box-shadow: var(--shadow-sm);
 }
 
 .support-option__button:hover {
@@ -118,7 +120,7 @@
 .support-option__button:active {
   background: var(--color-primary-active);
   transform: translateY(0);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-xs);
 }
 
 .support-option__button:focus-visible {
@@ -133,17 +135,17 @@
 .support-option__badge {
   display: inline-block;
   padding: var(--space-8) var(--space-12);
-  background: linear-gradient(135deg, rgba(var(--color-warning-rgb), 0.15) 0%, rgba(var(--color-warning-rgb), 0.08) 100%);
+  background: rgba(var(--color-warning-rgb), var(--status-bg-opacity));
   color: var(--color-warning);
-  border: 2px solid var(--color-warning);
+  border: 1px solid rgba(var(--color-warning-rgb), var(--status-border-opacity));
   border-radius: var(--radius-full);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
   margin-top: var(--space-8);
   animation: fadeInUp 0.5s var(--ease-standard);
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-tight);
-  box-shadow: 0 2px 8px rgba(var(--color-warning-rgb), 0.2);
+  letter-spacing: 0.5px;
+  box-shadow: var(--shadow-xs);
 }
 
 /* ============================================
@@ -242,7 +244,7 @@
   font-weight: var(--font-weight-medium);
   cursor: pointer;
   transition: all var(--duration-normal) var(--ease-standard);
-  box-shadow: var(--shadow-inset-sm);
+  box-shadow: var(--shadow-sm);
 }
 
 .support-form__submit:hover:not(:disabled) {
@@ -254,7 +256,7 @@
 .support-form__submit:active:not(:disabled) {
   background: var(--color-primary-active);
   transform: translateY(0);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-xs);
 }
 
 .support-form__submit:focus-visible {
@@ -281,15 +283,15 @@
 }
 
 .support-response.success {
-  background: rgba(var(--color-success-rgb), 0.15);
+  background-color: rgba(var(--color-success-rgb), var(--status-bg-opacity));
   color: var(--color-success);
-  border: 1px solid rgba(var(--color-success-rgb), 0.25);
+  border: 1px solid rgba(var(--color-success-rgb), var(--status-border-opacity));
 }
 
 .support-response.error {
-  background: rgba(var(--color-error-rgb), 0.15);
+  background-color: rgba(var(--color-error-rgb), var(--status-bg-opacity));
   color: var(--color-error);
-  border: 1px solid rgba(var(--color-error-rgb), 0.25);
+  border: 1px solid rgba(var(--color-error-rgb), var(--status-border-opacity));
 }
 
 /* ============================================
@@ -319,7 +321,7 @@
 }
 
 /* ============================================
-   RESPONSIVE DESIGN
+   RESPONSIVE - LAPTOP (1024px)
    ============================================ */
 
 @media (max-width: 1024px) {
@@ -335,6 +337,10 @@
     height: auto;
   }
 }
+
+/* ============================================
+   RESPONSIVE - TABLET (768px)
+   ============================================ */
 
 @media (max-width: 768px) {
   .support-page {
@@ -362,6 +368,10 @@
     padding: var(--space-24);
   }
 }
+
+/* ============================================
+   RESPONSIVE - MOBILE PORTRAIT (480px)
+   ============================================ */
 
 @media (max-width: 480px) {
   .support-page {
@@ -461,28 +471,6 @@
    ACCESSIBILITY
    ============================================ */
 
-@media (prefers-reduced-motion: reduce) {
-  .support-option,
-  .support-option__badge,
-  .support-response,
-  .support-form__submit {
-    animation: none;
-    transition: none;
-  }
-
-  .support-option:hover {
-    transform: none;
-  }
-
-  .support-option__button:hover {
-    transform: none;
-  }
-
-  .support-form__submit:hover:not(:disabled) {
-    transform: none;
-  }
-}
-
 @media (prefers-contrast: more) {
   .support-option {
     border-width: 2px;
@@ -504,5 +492,39 @@
   .support-response.success,
   .support-response.error {
     border-width: 2px;
+  }
+
+  .support-page h1,
+  .support-form-section h3,
+  .support-option__title {
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .support-option,
+  .support-option__button,
+  .support-form__submit,
+  .support-form__input,
+  .support-form__textarea,
+  .support-response {
+    transition: none;
+  }
+
+  .support-option:hover {
+    transform: none;
+  }
+
+  .support-option__button:hover,
+  .support-form__submit:hover {
+    transform: none;
+  }
+
+  .support-option__badge {
+    animation: none;
+  }
+
+  .support-response {
+    animation: none;
   }
 }

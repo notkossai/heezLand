@@ -1,35 +1,44 @@
 /* ============================================
-   OTHER PAGE STYLES
+   OTHER PAGE - UNIFIED DESIGN SYSTEM
+   Extends globals.css with Other page theming
    ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-base);
+  background: var(--color-background);
+  color: var(--color-text);
+}
 
 .other-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-surface) 100%);
+  background: var(--color-background);
   padding: var(--space-32) var(--space-16);
 }
 
-.other-page .hero {
+.other-page > h1 {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   text-align: center;
   font-size: var(--font-size-3xl);
-  color: var(--color-primary);
-  margin: 0 0 var(--space-16) 0;
+  margin: 0 0 var(--space-8) 0;
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-tight);
 }
 
-.other-page .subtitle {
+.other-page > p {
   text-align: center;
   font-size: var(--font-size-lg);
-  color: var(--color-text);
-  margin: 0 0 var(--space-8) 0;
-  font-weight: var(--font-weight-medium);
-}
-
-.other-page .comments {
-  text-align: center;
-  font-size: var(--font-size-base);
   color: var(--color-text-secondary);
   margin: 0 0 var(--space-32) 0;
+  font-weight: var(--font-weight-medium);
 }
 
 .other-container {
@@ -72,12 +81,17 @@
 .other-feature:focus-visible {
   outline: var(--focus-outline);
   outline-offset: 2px;
+  box-shadow: var(--focus-ring);
 }
 
 .other-feature__icon {
   font-size: var(--font-size-3xl);
   margin-bottom: var(--space-16);
   display: inline-block;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .other-feature__title {
@@ -106,25 +120,26 @@
   border: none;
   border-radius: var(--radius-base);
   font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-medium);
   cursor: pointer;
   transition: all var(--duration-normal) var(--ease-standard);
   text-decoration: none;
   min-width: 140px;
   margin-bottom: var(--space-12);
   box-shadow: var(--shadow-inset-sm);
+  font-family: var(--font-family-base);
 }
 
 .other-feature__action:hover {
   background: var(--color-primary-hover);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .other-feature__action:active {
   background: var(--color-primary-active);
   transform: translateY(0);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-inset-sm);
 }
 
 .other-feature__action:focus-visible {
@@ -138,18 +153,18 @@
 
 .other-feature__badge {
   display: inline-block;
-  padding: var(--space-8) var(--space-12);
-  background: linear-gradient(135deg, rgba(var(--color-warning-rgb), 0.15) 0%, rgba(var(--color-warning-rgb), 0.08) 100%);
+  padding: var(--space-6) var(--space-12);
+  background: rgba(var(--color-warning-rgb), var(--status-bg-opacity));
   color: var(--color-warning);
-  border: 2px solid var(--color-warning);
+  border: 1px solid rgba(var(--color-warning-rgb), var(--status-border-opacity));
   border-radius: var(--radius-full);
   font-size: var(--font-size-sm);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-medium);
   margin-top: var(--space-8);
   animation: fadeInUp 0.5s var(--ease-standard);
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  box-shadow: 0 2px 8px rgba(var(--color-warning-rgb), 0.2);
+  box-shadow: var(--shadow-xs);
 }
 
 /* ============================================
@@ -178,8 +193,11 @@
 
 .other-stat__number {
   font-size: var(--font-size-3xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   line-height: 1;
 }
 
@@ -196,15 +214,18 @@
 .other-cta {
   text-align: center;
   padding: calc(var(--space-32) + var(--space-16)) var(--space-32);
-  background: linear-gradient(135deg, var(--color-bg-1) 0%, var(--color-bg-3) 100%);
-  border: 2px solid var(--color-primary);
+  background: var(--color-bg-1);
+  border: 1px solid var(--color-card-border);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .other-cta h3 {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-size: var(--font-size-2xl);
-  color: var(--color-primary);
   margin: 0 0 var(--space-12) 0;
   font-weight: var(--font-weight-semibold);
   letter-spacing: var(--letter-spacing-tight);
@@ -212,7 +233,7 @@
 
 .other-cta p {
   font-size: var(--font-size-lg);
-  color: var(--color-text);
+  color: var(--color-text-secondary);
   margin: 0 0 var(--space-24) 0;
   line-height: var(--line-height-normal);
 }
@@ -224,24 +245,25 @@
   border: none;
   border-radius: var(--radius-base);
   font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-semibold);
   cursor: pointer;
   transition: all var(--duration-normal) var(--ease-standard);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-inset-sm);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  font-family: var(--font-family-base);
 }
 
 .other-cta__button:hover {
   background: var(--color-primary-hover);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-md);
 }
 
 .other-cta__button:active {
   background: var(--color-primary-active);
   transform: translateY(0);
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-inset-sm);
 }
 
 .other-cta__button:focus-visible {
@@ -265,7 +287,7 @@
 }
 
 /* ============================================
-   RESPONSIVE DESIGN
+   RESPONSIVE - LAPTOP (1024px)
    ============================================ */
 
 @media (max-width: 1024px) {
@@ -278,12 +300,16 @@
   }
 }
 
+/* ============================================
+   RESPONSIVE - TABLET (768px)
+   ============================================ */
+
 @media (max-width: 768px) {
   .other-page {
     padding: var(--space-24) var(--space-16);
   }
 
-  .other-page .hero {
+  .other-page > h1 {
     font-size: var(--font-size-2xl);
   }
 
@@ -322,22 +348,22 @@
   }
 }
 
+/* ============================================
+   RESPONSIVE - MOBILE PORTRAIT (480px)
+   ============================================ */
+
 @media (max-width: 480px) {
   .other-page {
     padding: var(--space-16);
   }
 
-  .other-page .hero {
+  .other-page > h1 {
     font-size: var(--font-size-xl);
     margin-bottom: var(--space-12);
   }
 
-  .other-page .subtitle {
+  .other-page > p {
     font-size: var(--font-size-base);
-  }
-
-  .other-page .comments {
-    font-size: var(--font-size-sm);
     margin-bottom: var(--space-20);
   }
 
@@ -411,22 +437,6 @@
    ACCESSIBILITY
    ============================================ */
 
-@media (prefers-reduced-motion: reduce) {
-  .other-feature,
-  .other-feature__badge,
-  .other-cta__button,
-  .other-feature__action {
-    animation: none;
-    transition: none;
-  }
-
-  .other-feature:hover,
-  .other-cta__button:hover,
-  .other-feature__action:hover {
-    transform: none;
-  }
-}
-
 @media (prefers-contrast: more) {
   .other-feature {
     border-width: 2px;
@@ -441,6 +451,36 @@
   }
 
   .other-cta {
-    border-width: 3px;
+    border-width: 2px;
+  }
+
+  .other-page > h1,
+  .other-cta h3,
+  .other-feature__title {
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .other-feature,
+  .other-feature__action,
+  .other-cta__button {
+    transition: none;
+  }
+
+  .other-feature:hover {
+    transform: none;
+  }
+
+  .other-feature__action:hover {
+    transform: none;
+  }
+
+  .other-cta__button:hover {
+    transform: none;
+  }
+
+  .other-feature__badge {
+    animation: none;
   }
 }

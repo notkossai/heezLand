@@ -7,11 +7,6 @@ export default function HeroSection() {
           <p className="hero-section__subtitle">
             Follow us across all social media platforms for the latest updates and community engagement
           </p>
-          <div className="hero-section__cta">
-            <a href="#socials" className="hero-section__button">
-              Explore Socials
-            </a>
-          </div>
         </div>
         
         <div className="hero-section__visual">
