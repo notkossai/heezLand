@@ -26,21 +26,6 @@
   animation: slideInLeft var(--transition-slow);
 }
 
-.hero__logo {
-  width: 80px;
-  height: 80px;
-  margin-bottom: var(--space-xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero__logo svg {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
 .hero__title {
   font-size: var(--font-size-4xl);
   background: linear-gradient(135deg, var(--clr-secondary-green) 0%, var(--clr-secondary-green-light) 100%);
@@ -169,7 +154,7 @@
 .hero__decoration {
   position: absolute;
   font-size: var(--font-size-4xl);
-  animation: float var(--transition-slow) ease-in-out infinite;
+  animation: float 4s var(--transition-slow) ease-in-out infinite;
 }
 
 .hero__decoration--1 {
@@ -525,36 +510,4 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .home-page {
-    background: #1a1a1a;
-  }
 
-  .kids-section {
-    background: #2c2c2c;
-  }
-
-  .kids-feature {
-    background: #3c3c3c;
-    color: #e0e0e0;
-  }
-
-  .kids-feature__title,
-  .kids-title {
-    color: #90caf9;
-  }
-
-  .parents-benefit {
-    background: #3c3c3c;
-    color: #e0e0e0;
-  }
-
-  .parents-benefit p {
-    color: #b0b0b0;
-  }
-
-  .hero__stat {
-    background: #3c3c3c;
-    color: #e0e0e0;
-  }
-}

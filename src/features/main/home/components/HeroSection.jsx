@@ -1,4 +1,6 @@
+
 import { Link } from 'react-router-dom';
+
 import CoinSvg from "@/assets/svg/brand/coin.svg?react";
 
 export default function HeroSection({ coins }) {

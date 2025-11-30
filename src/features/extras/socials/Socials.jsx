@@ -1,5 +1,7 @@
 import "./socials.css";
 
+import React from "react";
+
 import EmailUs from "./components/EmailUs";
 import SocialMedia from "./components/SocialMedia";
 import HeroSection from "./components/HeroSection";

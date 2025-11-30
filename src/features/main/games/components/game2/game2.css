@@ -1,152 +1,451 @@
+/* ============================================
+   GAME 2 - QUIZ GAME STYLES
+   INTERACTIVE KNOWLEDGE TESTING
+   ============================================ */
+
 .game2-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #e3f2fd 0%, #f3e5f5 100%);
+  background: linear-gradient(135deg, var(--color-background) 0%, var(--color-surface) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: var(--space-32);
 }
+
+/* ============================================
+   WELCOME SCREEN
+   ============================================ */
 
 .game2-welcome,
 .game2-result,
 .game2-quiz {
-  background: white;
-  border-radius: 16px;
-  padding: 3rem 2rem;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-32) var(--space-24);
   max-width: 600px;
   width: 100%;
-  box-shadow: 0 8px 25px rgba(25, 118, 210, 0.2);
+  box-shadow: var(--shadow-lg);
   text-align: center;
-  animation: slideInUp 0.6s ease-out;
+  animation: slideInUp var(--duration-normal) var(--ease-standard);
+  border: 1px solid var(--color-card-border);
+  transition: box-shadow var(--duration-normal) var(--ease-standard);
 }
 
 .game2-welcome h1,
 .game2-result h1 {
-  font-size: 2.5rem;
-  background: linear-gradient(135deg, #1976d2 0%, #2196f3 100%);
+  font-size: var(--font-size-4xl);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-16);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
 }
 
 .game2-welcome p {
-  font-size: 1.1rem;
-  color: #1976d2;
-  margin-bottom: 2rem;
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-32);
+  line-height: var(--line-height-normal);
 }
 
+/* ============================================
+   BUTTONS
+   ============================================ */
+
 .game2-btn {
-  padding: 1rem 2rem;
-  font-size: 1rem;
+  padding: var(--space-16) var(--space-32);
+  font-size: var(--font-size-base);
   border: none;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   cursor: pointer;
-  font-weight: 700;
-  transition: all 0.3s ease;
+  font-weight: var(--font-weight-semibold);
+  transition: all var(--duration-normal) var(--ease-standard);
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  box-shadow: var(--shadow-md);
+  font-family: var(--font-family-base);
+}
+
+.game2-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+.game2-btn:active:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
 }
 
 .game2-btn--primary {
-  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
-  color: white;
-  box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+  background: var(--color-primary);
+  color: var(--color-btn-primary-text);
 }
 
 .game2-btn--primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(25, 118, 210, 0.4);
+  background: var(--color-primary-hover);
 }
+
+.game2-btn--primary:active {
+  background: var(--color-primary-active);
+}
+
+.game2-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.game2-btn:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+  box-shadow: var(--focus-ring);
+}
+
+/* ============================================
+   QUIZ CONTAINER
+   ============================================ */
 
 .game2-quiz__header {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 3px solid #e3f2fd;
+  margin-bottom: var(--space-32);
+  padding-bottom: var(--space-16);
+  border-bottom: 2px solid var(--color-card-border);
 }
 
 .game2-quiz__progress,
 .game2-quiz__score {
-  font-weight: 700;
-  font-size: 1rem;
-  color: #1976d2;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  color: var(--color-primary);
+  line-height: var(--line-height-normal);
 }
 
+/* ============================================
+   QUESTION & OPTIONS
+   ============================================ */
+
 .game2-quiz__question {
-  font-size: 1.5rem;
-  color: #1565c0;
-  margin-bottom: 2rem;
+  font-size: var(--font-size-2xl);
+  color: var(--color-text);
+  margin-bottom: var(--space-32);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-normal);
 }
 
 .game2-options {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: var(--space-16);
+  margin-bottom: var(--space-32);
 }
 
+/* ============================================
+   OPTION BUTTONS
+   ============================================ */
+
 .game2-option {
-  padding: 1rem;
-  background: #f3e5f5;
-  border: 3px solid #bbdefb;
-  border-radius: 12px;
+  padding: var(--space-16);
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
   cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  color: #1976d2;
+  font-weight: var(--font-weight-semibold);
+  transition: all var(--duration-normal) var(--ease-standard);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+  line-height: var(--line-height-normal);
 }
 
 .game2-option:hover:not(:disabled) {
-  background: #e3f2fd;
-  border-color: #1976d2;
+  background: var(--color-secondary);
+  border-color: var(--color-primary);
   transform: translateX(4px);
+  box-shadow: var(--shadow-md);
+}
+
+.game2-option:active:not(:disabled) {
+  transform: translateX(2px);
+  box-shadow: var(--shadow-sm);
 }
 
 .game2-option--correct {
-  background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
-  border-color: #4caf50;
-  color: #1b5e20;
+  background: rgba(var(--color-success-rgb), var(--status-bg-opacity));
+  border-color: var(--color-success);
+  color: var(--color-success);
+  box-shadow: 0 0 var(--space-16) rgba(var(--color-success-rgb), 0.2);
 }
 
 .game2-option--wrong {
-  background: #ffcccc;
-  border-color: #f44336;
-  color: #c62828;
+  background: rgba(var(--color-error-rgb), var(--status-bg-opacity));
+  border-color: var(--color-error);
+  color: var(--color-error);
+  box-shadow: 0 0 var(--space-16) rgba(var(--color-error-rgb), 0.2);
 }
 
 .game2-option:disabled {
   cursor: not-allowed;
 }
 
+.game2-option:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+  box-shadow: var(--focus-ring);
+}
+
+/* ============================================
+   FEEDBACK SECTION
+   ============================================ */
+
 .game2-feedback {
-  background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
-  padding: 1.5rem;
-  border-radius: 12px;
-  margin-top: 1rem;
+  background: rgba(var(--color-info-rgb), 0.1);
+  padding: var(--space-20);
+  border-radius: var(--radius-lg);
+  margin-top: var(--space-16);
+  border-left: 4px solid var(--color-info);
+  box-shadow: var(--shadow-sm);
 }
 
 .game2-feedback__fact {
   margin: 0;
-  color: #0277bd;
-  font-size: 1rem;
-  line-height: 1.6;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  font-weight: var(--font-weight-medium);
 }
 
+/* ============================================
+   RESULT SCREEN
+   ============================================ */
+
 .game2-result__score {
-  font-size: 1.5rem;
-  color: #1976d2;
-  font-weight: 700;
-  margin: 1rem 0;
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+  margin: var(--space-16) 0;
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 .game2-result__coins {
-  font-size: 2rem;
-  color: #f57f17;
-  font-weight: 800;
-  margin: 1rem 0 2rem;
+  font-size: var(--font-size-3xl);
+  color: var(--color-warning);
+  font-weight: var(--font-weight-bold);
+  margin: var(--space-16) 0 var(--space-32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
 }
+
+.game2-result__coins::before {
+  content: '🪙';
+  font-size: calc(var(--font-size-4xl) + var(--space-8));
+}
+
+.game2-result__message {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin: var(--space-20) 0;
+  line-height: var(--line-height-normal);
+}
+
+.game2-result__buttons {
+  display: flex;
+  gap: var(--space-16);
+  justify-content: center;
+  margin-top: var(--space-32);
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   RESPONSIVE - TABLET (1024px)
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .game2-page {
+    padding: var(--space-24);
+  }
+
+  .game2-welcome,
+  .game2-result,
+  .game2-quiz {
+    padding: var(--space-24) var(--space-20);
+  }
+}
+
+/* ============================================
+   RESPONSIVE - TABLET (768px)
+   ============================================ */
+
+@media (max-width: 768px) {
+  .game2-page {
+    padding: var(--space-16);
+  }
+
+  .game2-welcome,
+  .game2-result,
+  .game2-quiz {
+    padding: var(--space-24) var(--space-16);
+  }
+
+  .game2-welcome h1,
+  .game2-result h1 {
+    font-size: var(--font-size-3xl);
+  }
+
+  .game2-quiz__question {
+    font-size: var(--font-size-xl);
+  }
+
+  .game2-quiz__header {
+    gap: var(--space-16);
+  }
+
+  .game2-options {
+    gap: var(--space-12);
+    margin-bottom: var(--space-24);
+  }
+
+  .game2-option {
+    padding: var(--space-12);
+    font-size: var(--font-size-sm);
+  }
+
+  .game2-feedback {
+    padding: var(--space-16);
+    margin-top: var(--space-12);
+  }
+
+  .game2-result__score {
+    font-size: var(--font-size-xl);
+  }
+
+  .game2-result__coins {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE PORTRAIT (480px)
+   ============================================ */
+
+@media (max-width: 480px) {
+  .game2-page {
+    padding: var(--space-12);
+    min-height: 100vh;
+    align-items: flex-start;
+    padding-top: var(--space-24);
+  }
+
+  .game2-welcome,
+  .game2-result,
+  .game2-quiz {
+    padding: var(--space-20) var(--space-16);
+    border-radius: var(--radius-md);
+    max-width: 100%;
+  }
+
+  .game2-btn {
+    padding: var(--space-12) var(--space-24);
+    font-size: var(--font-size-sm);
+    width: 100%;
+    border-radius: var(--radius-base);
+  }
+
+  .game2-welcome h1,
+  .game2-result h1 {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-12);
+  }
+
+  .game2-welcome p {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-24);
+  }
+
+  .game2-quiz__header {
+    flex-direction: column;
+    gap: var(--space-8);
+    padding-bottom: var(--space-12);
+    margin-bottom: var(--space-24);
+  }
+
+  .game2-quiz__progress,
+  .game2-quiz__score {
+    font-size: var(--font-size-sm);
+  }
+
+  .game2-quiz__question {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-20);
+  }
+
+  .game2-options {
+    gap: var(--space-12);
+    margin-bottom: var(--space-20);
+  }
+
+  .game2-option {
+    padding: var(--space-12);
+    font-size: var(--font-size-sm);
+    border-radius: var(--radius-base);
+  }
+
+  .game2-option:hover:not(:disabled) {
+    transform: translateX(2px);
+  }
+
+  .game2-feedback {
+    padding: var(--space-12);
+    margin-top: var(--space-12);
+    border-radius: var(--radius-base);
+  }
+
+  .game2-feedback__fact {
+    font-size: var(--font-size-sm);
+  }
+
+  .game2-result__score {
+    font-size: var(--font-size-lg);
+    margin: var(--space-12) 0;
+  }
+
+  .game2-result__coins {
+    font-size: var(--font-size-2xl);
+    margin: var(--space-12) 0 var(--space-20);
+    gap: var(--space-6);
+  }
+
+  .game2-result__coins::before {
+    font-size: var(--font-size-3xl);
+  }
+
+  .game2-result__message {
+    font-size: var(--font-size-base);
+    margin: var(--space-16) 0;
+  }
+
+  .game2-result__buttons {
+    flex-direction: column;
+    gap: var(--space-12);
+    margin-top: var(--space-20);
+  }
+
+  .game2-result__buttons .game2-btn {
+    width: 100%;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
 
 @keyframes slideInUp {
   from {
@@ -159,49 +458,55 @@
   }
 }
 
-@media (max-width: 768px) {
-  .game2-welcome,
-  .game2-result,
-  .game2-quiz {
-    padding: 2rem 1rem;
-  }
-
-  .game2-welcome h1,
-  .game2-result h1 {
-    font-size: 2rem;
-  }
-
-  .game2-quiz__question {
-    font-size: 1.25rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .game2-page {
-    padding: 1rem;
-  }
-
-  .game2-welcome,
-  .game2-result,
-  .game2-quiz {
-    padding: 1.5rem 1rem;
-  }
-
-  .game2-btn {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
-  }
-}
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
 
 @media (prefers-reduced-motion: reduce) {
   .game2-welcome,
   .game2-result,
-  .game2-quiz {
+  .game2-quiz,
+  .game2-btn,
+  .game2-option {
     animation: none;
+    transition: none;
   }
 
-  .game2-btn:hover,
-  .game2-option:hover {
+  .game2-btn:hover:not(:disabled),
+  .game2-option:hover:not(:disabled) {
     transform: none;
   }
+}
+
+@media (prefers-contrast: more) {
+  .game2-welcome,
+  .game2-result,
+  .game2-quiz,
+  .game2-option {
+    border-width: 3px;
+  }
+
+  .game2-welcome h1,
+  .game2-result h1,
+  .game2-quiz__question {
+    font-weight: var(--font-weight-bold);
+  }
+
+  .game2-btn {
+    border: 2px solid currentColor;
+  }
+
+  .game2-option {
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .game2-feedback {
+    background: rgba(var(--color-info-rgb), var(--status-bg-opacity));
+  }
+}
+
+[data-color-scheme="dark"] .game2-feedback {
+  background: rgba(var(--color-info-rgb), var(--status-bg-opacity));
 }

@@ -15,6 +15,7 @@ import BlogPage from './features/extras/blog/Blog'
 import FaqPage from './features/extras/faq/Faq'
 import SupportPage from './features/extras/support/Support'
 import OtherPage from './features/extras/other/Other'
+import UnderConstruction from './features/extras/under-construction/UnderConstruction'
 
 
 function App() {
@@ -28,13 +29,12 @@ function App() {
                 <Route path="/quiz" element={<QuizPage />} />
                 <Route path="/about" element={<AboutPage />} />
 
+                <Route path="/socials" element={<Socials />} />
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/faq" element={<FaqPage />} />
                 <Route path="/support" element={<SupportPage />} />
                 <Route path="/other" element={<OtherPage />} />
-                <Route path="/socials" element={<Socials />} />
-
-
+                <Route path="/under-construction" element={<UnderConstruction />} />
             </Routes>
             <Footer />
         </Router>

@@ -1,8 +1,5 @@
-
 import './support.css';
-
 import { useNavigate } from 'react-router-dom';
-
 import { useState } from 'react';
 import { useCoin } from '../../../../contexts/coins/CoinContext';
 
@@ -14,6 +11,7 @@ const SUPPORT_OPTIONS = [
     description: 'Send us an email and we\'ll respond within 24 hours',
     contact: 'support@heezland.com',
     link: 'mailto:support@heezland.com',
+    isComplete: true,
   },
   {
     id: 2,
@@ -22,6 +20,7 @@ const SUPPORT_OPTIONS = [
     description: 'Chat with our team during business hours',
     contact: 'Available 9AM-5PM',
     link: null,
+    isComplete: false,
   },
   {
     id: 3,
@@ -30,6 +29,7 @@ const SUPPORT_OPTIONS = [
     description: 'Find instant answers to common questions',
     contact: 'Browse FAQs',
     link: '/faq',
+    isComplete: true,
   },
   {
     id: 4,
@@ -38,6 +38,7 @@ const SUPPORT_OPTIONS = [
     description: 'Ask and help other Heez Land members',
     contact: 'Join Forum',
     link: null,
+    isComplete: false,
   }
 ];
 
@@ -69,6 +70,21 @@ export default function SupportPage() {
     }
   };
 
+  const handleSupportOptionClick = (option) => {
+    if (!option.isComplete) {
+      // Navigate to under-construction page
+      navigate('/under-construction');
+    } else {
+      // Handle complete features
+      if (option.link) {
+        if (option.link.startsWith('mailto:')) {
+          window.location.href = option.link;
+        } else {
+          navigate(option.link);
+        }
+      }
+    }
+  };
 
   return (
     <main className="support-page">
@@ -78,24 +94,29 @@ export default function SupportPage() {
       <div className="support-container">
         <div className="support-options">
           {SUPPORT_OPTIONS.map(option => (
-            <div key={option.id} className="support-option">
+            <div 
+              key={option.id} 
+              className="support-option"
+              onClick={() => handleSupportOptionClick(option)}
+              role="button"
+              tabIndex={0}
+              onKeyPress={(e) => e.key === 'Enter' && handleSupportOptionClick(option)}
+            >
               <div className="support-option__icon">{option.icon}</div>
               <h3 className="support-option__title">{option.title}</h3>
               <p className="support-option__description">{option.description}</p>
               <button
                 className="support-option__button"
-                onClick={() => {
-                  if (option.link) {
-                    if (option.link.startsWith('mailto:')) {
-                      window.location.href = option.link;
-                    } else {
-                      navigate(option.link);
-                    }
-                  }
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleSupportOptionClick(option);
                 }}
               >
-                {option.contact}
+                {option.isComplete ? option.contact : 'Coming Soon...'}
               </button>
+              {!option.isComplete && (
+                <span className="support-option__badge">🚧 In Progress</span>
+              )}
             </div>
           ))}
         </div>
@@ -160,11 +181,10 @@ export default function SupportPage() {
               </div>
             )}
 
-            {isOnCoolDown && !submitted &&(
+            {isOnCoolDown && !submitted && (
               <div className="support-response error">
                 ⏳ Too many requests, you need to wait 5 minutes to send another message.
               </div>
-              /* TO DO */
             )}
           </form>
         </div>

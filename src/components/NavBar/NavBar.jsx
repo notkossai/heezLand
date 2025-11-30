@@ -1,7 +1,7 @@
 import './navbar.css';
 
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useCoin } from '../../../contexts/coins/CoinContext';
 
 import CoinSvg from "@/assets/svg/brand/coin.svg?react";
@@ -9,6 +9,7 @@ import CoinSvg from "@/assets/svg/brand/coin.svg?react";
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const { coins } = useCoin();
+  const location = useLocation();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -20,6 +21,8 @@ export default function NavBar() {
     { to: "/about", label: "About" },
   ];
 
+  const isActive = (path) => location.pathname === path;
+
   return (
     <nav className="navbar">
       <div className="navbar__container">
@@ -29,9 +32,10 @@ export default function NavBar() {
         </Link>
 
         <button 
-          className="navbar__hamburger"
+          className={`navbar__hamburger ${menuOpen ? 'active' : ''}`}
           onClick={toggleMenu}
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
         >
           <span></span>
           <span></span>
@@ -43,8 +47,9 @@ export default function NavBar() {
             <li key={link.to}>
               <Link 
                 to={link.to} 
-                className="navbar__link"
+                className={`navbar__link ${isActive(link.to) ? 'navbar__link--active' : ''}`}
                 onClick={() => setMenuOpen(false)}
+                aria-current={isActive(link.to) ? 'page' : undefined}
               >
                 {link.label}
               </Link>

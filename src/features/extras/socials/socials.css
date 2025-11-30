@@ -1,4 +1,9 @@
 
+
+/* ============================================
+   CONTACT PAGE - UNIFIED DESIGN SYSTEM
+   ============================================ */
+
 .contact-section {
   width: 100%;
   max-width: var(--container-xl);
@@ -9,7 +14,10 @@
   gap: var(--space-32);
 }
 
-/* Contact Form Styles */
+/* ============================================
+   CONTACT FORM STYLES
+   ============================================ */
+
 .contact-form {
   width: 100%;
   max-width: 600px;
@@ -34,6 +42,7 @@
   color: var(--color-text);
   margin: 0 0 var(--space-24) 0;
   letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
 }
 
 .contact-form__group {
@@ -55,23 +64,34 @@
   margin-left: var(--space-4);
 }
 
+/* ============================================
+   FORM INPUTS
+   ============================================ */
+
 .contact-form__input {
   width: 100%;
   padding: var(--space-12) var(--space-16);
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-base);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
   color: var(--color-text);
   font-family: var(--font-family-base);
   transition: all var(--duration-normal) var(--ease-standard);
   outline: none;
 }
 
+.contact-form__input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+}
+
 .contact-form__input:focus {
   border-color: var(--color-primary);
   box-shadow: var(--focus-ring);
   background-color: var(--color-surface);
+  outline: var(--focus-outline);
+  outline-offset: 0;
 }
 
 .contact-form__input:hover {
@@ -82,12 +102,20 @@
   min-height: 200px;
   resize: vertical;
   font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
 }
 
 .contact-form__input--textarea:focus {
   border-color: var(--color-primary);
   box-shadow: var(--focus-ring);
+  outline: var(--focus-outline);
+  outline-offset: 0;
 }
+
+/* ============================================
+   FORM BUTTON
+   ============================================ */
 
 .contact-form__button {
   width: 100%;
@@ -101,8 +129,9 @@
   color: var(--color-btn-primary-text);
   cursor: pointer;
   transition: all var(--duration-normal) var(--ease-standard);
-  box-shadow: var(--shadow-inset-sm);
+  box-shadow: var(--shadow-sm);
   letter-spacing: 0.5px;
+  font-family: var(--font-family-base);
 }
 
 .contact-form__button:hover {
@@ -113,13 +142,20 @@
 
 .contact-form__button:active {
   transform: translateY(0);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-xs);
   background: var(--color-primary-active);
 }
 
 .contact-form__button:focus-visible {
-  outline: none;
+  outline: var(--focus-outline);
+  outline-offset: 2px;
   box-shadow: var(--focus-ring);
+}
+
+.contact-form__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
 }
 
 /* ============================================
@@ -165,6 +201,7 @@
   color: var(--color-text);
   margin: 0 0 var(--space-32) 0;
   letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
 }
 
 .social-links-grid {
@@ -191,6 +228,7 @@
   min-height: 70px;
   box-shadow: var(--shadow-sm);
   text-decoration: none;
+  border: none;
 }
 
 .social-card:hover {
@@ -207,6 +245,7 @@
 .social-card:focus-visible {
   outline: var(--focus-outline);
   outline-offset: 2px;
+  box-shadow: var(--focus-ring);
 }
 
 .social-card__icon {
@@ -216,13 +255,13 @@
   flex-shrink: 0;
   width: 40px;
   height: 40px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(var(--color-btn-primary-text), 0.2);
   border-radius: var(--radius-base);
   transition: all var(--duration-normal) var(--ease-standard);
 }
 
 .social-card:hover .social-card__icon {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(var(--color-btn-primary-text), 0.3);
   transform: scale(1.1);
 }
 
@@ -254,7 +293,7 @@
 .social-card__link p {
   margin: var(--space-4) 0 0 0;
   font-size: var(--font-size-sm);
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(var(--color-btn-primary-text), 0.85);
   transition: all var(--duration-normal) var(--ease-standard);
 }
 
@@ -262,29 +301,55 @@
   color: var(--color-btn-primary-text);
 }
 
-/* Social Card Variants */
+/* ============================================
+   SOCIAL CARD VARIANTS
+   ============================================ */
+
 .social-card--tiktok {
-  background: var( --kids-purple-2);
+  background: var(--color-bg-7);
+  color: var(--color-text);
 }
 
 .social-card--tiktok:hover {
-  background: var( --kids-purple-3);
+  background: var(--color-bg-7);
+  filter: brightness(1.1);
+}
+
+.social-card--tiktok .social-card__icon {
+  background-color: var(--color-secondary);
+}
+
+.social-card--tiktok:hover .social-card__icon {
+  background-color: var(--color-secondary-hover);
+}
+
+.social-card--tiktok .social-card__name,
+.social-card--tiktok .social-card__icon svg {
+  color: var(--color-text);
+}
+
+.social-card--tiktok .social-card__link p {
+  color: var(--color-text-secondary);
+}
+
+.social-card--tiktok:hover .social-card__link p {
+  color: var(--color-text);
 }
 
 .social-card--youtube {
-  background: var(--color-red-500);
+  background: var(--color-error);
 }
 
 .social-card--youtube:hover {
-  background: var(--color-red-400);
+  background: rgba(var(--color-error-rgb), 0.9);
 }
 
 .social-card--instagram {
-  background: var(--color-orange-500);
+  background: var(--color-warning);
 }
 
 .social-card--instagram:hover {
-  background: var(--color-orange-400);
+  background: rgba(var(--color-warning-rgb), 0.9);
 }
 
 .social-card--facebook {
@@ -324,6 +389,7 @@
   color: var(--color-text);
   margin: 0 0 var(--space-32) 0;
   letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
 }
 
 .dev-socials-grid {
@@ -334,7 +400,10 @@
   margin: 0 auto;
 }
 
-/* Developer Card */
+/* ============================================
+   DEVELOPER PROFILE
+   ============================================ */
+
 .dev-profile {
   display: flex;
   flex-direction: column;
@@ -342,7 +411,7 @@
   padding: var(--space-24);
   background: var(--color-surface);
   border-radius: var(--radius-md);
-  border: 1px solid var(--color-card-border);
+  border: 1px solid var(--color-card-border-inner);
   transition: all var(--duration-normal) var(--ease-standard);
 }
 
@@ -361,7 +430,10 @@
   letter-spacing: var(--letter-spacing-tight);
 }
 
-/* Developer Social Card */
+/* ============================================
+   DEVELOPER SOCIAL CARD
+   ============================================ */
+
 .dev-social-card {
   display: flex;
   align-items: center;
@@ -374,6 +446,7 @@
   box-shadow: var(--shadow-sm);
   text-decoration: none;
   min-height: 55px;
+  border: none;
 }
 
 .dev-social-card:hover {
@@ -384,11 +457,13 @@
 
 .dev-social-card:active {
   background: var(--color-primary-active);
+  transform: translateY(-1px);
 }
 
 .dev-social-card:focus-visible {
   outline: var(--focus-outline);
   outline-offset: 2px;
+  box-shadow: var(--focus-ring);
 }
 
 .dev-social-card__icon {
@@ -398,13 +473,13 @@
   flex-shrink: 0;
   width: 35px;
   height: 35px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(var(--color-btn-primary-text), 0.2);
   border-radius: var(--radius-sm);
   transition: all var(--duration-normal) var(--ease-standard);
 }
 
 .dev-social-card:hover .dev-social-card__icon {
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(var(--color-btn-primary-text), 0.3);
   transform: scale(1.1);
 }
 
@@ -419,19 +494,19 @@
   min-width: 0;
 }
 
-.dev-social-card__content p{
-   margin: var(--space-4) 0 0 0;
-   font-size: var(--font-size-sm);
-   color: rgba(255, 255, 255, 0.85);
-   transition: all var(--duration-normal) var(--ease-standard);
-   word-break: break-word;
-}
-
 .dev-social-card__platform {
   margin: 0;
   font-size: var(--font-size-md);
   font-weight: var(--font-weight-semibold);
   color: var(--color-btn-primary-text);
+}
+
+.dev-social-card__content p {
+  margin: var(--space-4) 0 0 0;
+  font-size: var(--font-size-sm);
+  color: rgba(var(--color-btn-primary-text), 0.85);
+  transition: all var(--duration-normal) var(--ease-standard);
+  word-break: break-word;
 }
 
 .dev-social-card__link {
@@ -443,10 +518,9 @@
 }
 
 /* ============================================
-   RESPONSIVE DESIGN
+   RESPONSIVE - MOBILE (480px)
    ============================================ */
 
-/* Mobile Portrait - 480px breakpoint */
 @media (max-width: 480px) {
   .contact-section {
     padding: var(--space-16) var(--space-12);
@@ -455,20 +529,31 @@
 
   .contact-form {
     padding: var(--space-20);
+    max-width: 100%;
   }
 
   .contact-form__title {
     font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-16);
+  }
+
+  .contact-form__label {
+    font-size: var(--font-size-sm);
   }
 
   .contact-form__input {
     padding: var(--space-10) var(--space-12);
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-base);
+  }
+
+  .contact-form__input--textarea {
+    min-height: 150px;
   }
 
   .contact-form__button {
-    padding: var(--space-12);
+    padding: var(--space-12) var(--space-16);
     font-size: var(--font-size-md);
+    margin-top: var(--space-16);
   }
 
   .social-links-grid {
@@ -485,6 +570,19 @@
   .social-card__icon {
     width: 36px;
     height: 36px;
+  }
+
+  .social-card__icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .social-card__name {
+    font-size: var(--font-size-sm);
+  }
+
+  .social-card__link p {
+    font-size: var(--font-size-xs);
   }
 
   .social-links-section {
@@ -507,7 +605,7 @@
 
   .dev-socials-grid {
     grid-template-columns: 1fr;
-    gap: var(--space-20);
+    gap: var(--space-16);
   }
 
   .dev-profile {
@@ -515,13 +613,45 @@
     gap: var(--space-16);
   }
 
+  .dev-profile__name {
+    font-size: var(--font-size-md);
+  }
+
   .dev-social-card {
     min-height: 50px;
     padding: var(--space-10);
+    gap: var(--space-12);
+  }
+
+  .dev-social-card__icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .dev-social-card__icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .dev-social-card__platform {
+    font-size: var(--font-size-sm);
+  }
+
+  .dev-social-card__content p {
+    font-size: var(--font-size-xs);
   }
 }
 
+/* ============================================
+   RESPONSIVE - TABLET (481px to 768px)
+   ============================================ */
+
 @media (min-width: 481px) and (max-width: 768px) {
+  .contact-section {
+    padding: var(--space-24) var(--space-16);
+    gap: var(--space-24);
+  }
+
   .social-links-grid {
     grid-template-columns: 1fr;
     gap: var(--space-16);
@@ -533,11 +663,12 @@
   }
 
   .social-card {
-    min-height: 60px;
+    min-height: 65px;
   }
 
   .contact-form {
     padding: var(--space-24);
+    max-width: 100%;
   }
 
   .social-links-section {
@@ -547,7 +678,15 @@
   .dev-socials-section {
     padding: var(--space-24);
   }
+
+  .dev-profile {
+    padding: var(--space-20);
+  }
 }
+
+/* ============================================
+   RESPONSIVE - TABLET (769px)
+   ============================================ */
 
 @media (min-width: 769px) {
   .contact-section {
@@ -577,11 +716,16 @@
   }
 }
 
+/* ============================================
+   RESPONSIVE - DESKTOP (1024px+)
+   ============================================ */
+
 @media (min-width: 1024px) {
   .contact-section {
     flex-direction: row;
     align-items: flex-start;
     gap: calc(var(--space-32) + var(--space-16));
+    padding: calc(var(--space-32) + var(--space-16)) var(--space-32);
   }
 
   .contact-form {
@@ -629,4 +773,97 @@
   .dev-social-card {
     min-height: 65px;
   }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-form,
+.social-links-section,
+.dev-socials-section {
+  animation: slideInUp 0.6s var(--ease-standard);
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-form,
+  .social-links-section,
+  .dev-socials-section,
+  .social-card,
+  .dev-social-card,
+  .dev-profile {
+    animation: none;
+    transition: none;
+  }
+
+  .contact-form:hover,
+  .social-card:hover,
+  .dev-social-card:hover,
+  .dev-profile:hover,
+  .contact-form__button:hover {
+    transform: none;
+  }
+
+  .social-card:hover .social-card__icon,
+  .dev-social-card:hover .dev-social-card__icon {
+    transform: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .contact-form,
+  .social-links-section,
+  .dev-socials-section,
+  .social-card,
+  .dev-profile {
+    border-width: 2px;
+  }
+
+  .contact-form__input {
+    border-width: 2px;
+  }
+
+  .contact-form__button {
+    border: 2px solid var(--color-primary-active);
+  }
+
+  .contact-form__title,
+  .social-links-section__title,
+  .dev-socials-section__title {
+    font-weight: var(--font-weight-bold);
+  }
+}
+
+/* ============================================
+   SUPPORT
+   ============================================ */
+.support-option {
+  display: flex;
+  flex-direction: column;  /* ← Stack items vertically */
+  align-items: center;      /* ← Center align */
+}
+
+.support-option__button {
+  margin-bottom: var(--space-12);  /* ← Space between button & badge */
+  min-width: 160px;
+}
+
+.support-option__badge {
+  margin-top: var(--space-8);   /* ← Push badge down slightly */
+  display: inline-block;
 }

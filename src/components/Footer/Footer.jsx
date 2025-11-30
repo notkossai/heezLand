@@ -18,9 +18,9 @@ export default function Footer() {
           <h4 className="footer__title">Quick Links</h4>
           <ul className="footer__links">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/blog">Learn</Link></li>
-            <li><Link to="/about">About</Link></li>
-            <li><Link to="/faq">FAQ</Link></li>
+            <li><Link to="/learn">Learn</Link></li>
+            <li><Link to="/games">Games</Link></li>
+            <li><Link to="/quiz">Quiz</Link></li>
           </ul>
         </div>
 
@@ -28,20 +28,18 @@ export default function Footer() {
           <h4 className="footer__title">Resources</h4>
           <ul className="footer__links">
             <li><Link to="/blog">Educational Blogs</Link></li>
+            <li><a href="/socials">Follow Us</a></li>
             <li><Link to="/support">Get Help</Link></li>
-            <li><Link to="/socials">Follow Us</Link></li>
-            <li><a href="#contact">Contact Us</a></li>
+            <li><Link to="/faq">FAQ</Link></li>
           </ul>
         </div>
 
-        <div className="footer__section">
-          <h4 className="footer__title">Follow Us</h4>
-          <div className="footer__socials">
-            <a href="#" className="footer__social" aria-label="Facebook">f</a>
-            <a href="#" className="footer__social" aria-label="Twitter">𝕏</a>
-            <a href="#" className="footer__social" aria-label="Instagram">📷</a>
-            <a href="#" className="footer__social" aria-label="YouTube">▶</a>
-          </div>
+          <div className="footer__section">
+          <h4 className="footer__title">Discover more</h4>
+          <ul className="footer__links">
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/other">Other</Link></li>
+          </ul>
         </div>
       </div>
 

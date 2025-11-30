@@ -76,11 +76,6 @@ export default function BlogPage() {
       <h1>🌿 Learn About Recycling</h1>
       <p>Discover amazing tips and facts about keeping our planet clean!</p>
 
-      <div className="blog-featured">
-        <h3>🌟 Featured Article</h3>
-        <p>{BLOG_POSTS.title} - Earn {BLOG_POSTS.coins} coins!</p>
-      </div>
-
       <div className="blog-container">
         {BLOG_POSTS.map(post => (
           <div key={post.id} className="blog-card">
